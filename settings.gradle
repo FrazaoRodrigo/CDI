@@ -1,0 +1,5 @@
+rootProject.name = 'CDI'
+include 'coherentDiffractiveImaging-rest',
+        'Cdi-ui'
+
+

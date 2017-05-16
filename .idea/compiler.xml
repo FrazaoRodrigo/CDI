@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="cdi_main" target="1.8" />
+      <module name="cdi_test" target="1.8" />
+      <module name="coherentDiffractiveImaging-rest_main" target="1.8" />
+      <module name="coherentDiffractiveImaging-rest_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
