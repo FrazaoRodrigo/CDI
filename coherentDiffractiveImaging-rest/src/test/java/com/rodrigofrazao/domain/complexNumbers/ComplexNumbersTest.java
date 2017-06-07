@@ -8,8 +8,6 @@ public class ComplexNumbersTest {
     Complex complex;
     PolarComplex polar;
 
-
-
     @Before
     public void setUp() {
         this.complex = new Complex(1.0D, 5.0D);

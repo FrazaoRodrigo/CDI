@@ -1,7 +1,9 @@
 package com.rodrigofrazao.domain.image;
 
 import javax.imageio.ImageIO;
+import java.awt.color.ColorSpace;
 import java.awt.image.BufferedImage;
+import java.awt.image.ColorConvertOp;
 import java.awt.image.Raster;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -13,18 +15,39 @@ public class ReadImage {
     public ReadImage(File imagePath) {
         try {
             this.image = ImageIO.read(imagePath);
-        } catch (IOException var3) {
-            System.err.println("IOException: " + var3.getMessage());
+        } catch (IOException er) {
+            System.err.println("IOException: " + er.getMessage());
+        }
+    }
+
+    public void buffuredImageToGrayImage(){
+        BufferedImage out = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_ARGB);
+        ColorConvertOp op = new ColorConvertOp(image.getColorModel().getColorSpace(), ColorSpace.getInstance(ColorSpace.CS_GRAY),  null);
+        op.filter(image, out);
+        this.image = out;
+    }
+
+    public double[][] bufferedImageToArray() {
+        int w = getWidth();
+        int h = getHeight();
+        double[][] array = new double[w][h];
+        buffuredImageToGrayImage();
+        Raster raster = image.getData();
+        for(int j = 0; j < w; ++j) {
+            for(int k = 0; k < h; ++k) {
+                array[j][k] = raster.getSampleDouble(j, k,0 );
+            }
         }
 
+        return array;
+    }
+
+    public ComplexImage bufferedImageToComplexImage() {
+        return new AmplitudeOnlyImage(bufferedImageToArray());
     }
 
     public BufferedImage toSave() {
         return this.image;
-    }
-
-    public int getWidth() {
-        return this.image.getWidth();
     }
 
     public void displayImage() {
@@ -36,11 +59,10 @@ public class ReadImage {
         ImageIO.write(img, "png", outputfile);
     }
 
+    public int getWidth() {return this.image.getWidth();}
+
     public int getHeight() {
         return this.image.getHeight();
     }
 
-    public Raster getData() {
-        return this.image.getData();
-    }
 }

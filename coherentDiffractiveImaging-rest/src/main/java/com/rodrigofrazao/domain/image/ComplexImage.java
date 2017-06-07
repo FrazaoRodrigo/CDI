@@ -1,65 +1,77 @@
 package com.rodrigofrazao.domain.image;
 
 import com.rodrigofrazao.domain.complexNumbers.PolarComplex;
+import com.rodrigofrazao.domain.fourierTransform.InverseTwoD_FFT;
+import com.rodrigofrazao.domain.supportConstraints.Mask;
 
 import java.util.Arrays;
 
-public class ComplexImage {
-    private double[][] amplitude;
-    private double[][] phase;
-    private double[][] real;
-    private double[][] imaginary;
-    int height = this.getHeight();
-    int width = this.getWidth();
+import static com.rodrigofrazao.domain.fourierTransform.InverseTwoD_FFT.inverseXform2D;
+import static com.rodrigofrazao.domain.fourierTransform.TwoD_FFT.twoDfft;
 
-    public ComplexImage() {
-    }
+public class ComplexImage {
+    double[][] amplitude,phase;
+    int height,width;
+
+    public ComplexImage(){}
 
     public ComplexImage(double[][] amplitude, double[][] phase) {
         this.amplitude = amplitude;
+        this.height = amplitude.length;
+        this.width = amplitude[0].length;
         this.phase = phase;
-        this.toCartesian();
     }
 
     public ComplexImage addRandomPhase() {
-        double[][] randomPhase = new double[this.width][this.height];
+        double[][] randomPhase = new double[height][width];
 
-        for(int j = 0; j < this.width; ++j) {
-            for(int k = 0; k < this.height; ++k) {
+        for(int j = 0; j < height; ++j) {
+            for(int k = 0; k < width; ++k) {
                 randomPhase[j][k] = -1.5707963267948966D + Math.random() * 3.141592653589793D / 2.0D;
             }
         }
-
-        this.phase = randomPhase;
+        phase = randomPhase;
         return this;
     }
 
-    public void toCartesian() {
-        double[][] realArray = new double[this.width][this.height];
-        double[][] imaginaryArray = new double[this.width][this.height];
-
-        for(int j = 1; j < this.width; ++j) {
-            for(int k = 1; k < this.height; ++k) {
-                PolarComplex polarComplex = new PolarComplex(this.amplitude[j][k], this.phase[j][k]);
+    public double[][] re() {
+        double[][] realArray = new double[height][width];
+        for(int j = 0; j < height; j++) {
+            for(int k = 0; k < width; k++) {
+                PolarComplex polarComplex = new PolarComplex(amplitude[j][k], phase[j][k]);
                 realArray[j][k] = polarComplex.re();
-                imaginaryArray[j][k] = polarComplex.im();
             }
         }
-
-        this.real = realArray;
-        this.imaginary = imaginaryArray;
-    }
-
-    public double[][] re() {
-        return this.real;
+        return realArray;
     }
 
     public double[][] im() {
-        return this.imaginary;
+        double[][] imaginaryArray = new double[height][width];
+        for(int j = 0; j < height; ++j) {
+            for(int k = 0; k < width; ++k) {
+                PolarComplex polarComplex = new PolarComplex(this.amplitude[j][k], this.phase[j][k]);
+                imaginaryArray[j][k] = polarComplex.im();
+            }
+        }
+        return imaginaryArray;
     }
 
+    public ComplexImage invfft() {
+       return inverseXform2D(re(),im());
+    }
+
+    public ComplexImage fft(ComplexImage realPlaneImageWithSupport) {
+         return twoDfft(realPlaneImageWithSupport.getAmplitude());
+    }
+
+
+
     public double[][] getAmplitude() {
-        return this.amplitude;
+        return amplitude;
+    }
+
+    public double[][] getPhase(){
+        return phase;
     }
 
     public ComplexImage setAmplitude(double[][] amplitude) {
@@ -67,12 +79,12 @@ public class ComplexImage {
         return this;
     }
 
-    public double[][] getPhase() {
-        return this.phase;
+    public int getHeight() {
+        return height;
     }
 
-    public void setPhase(double[][] phase) {
-        this.phase = phase;
+    public int getWidth() {
+        return width;
     }
 
     public boolean equals(Object o) {
@@ -92,11 +104,4 @@ public class ComplexImage {
         return result;
     }
 
-    public int getHeight() {
-        return this.amplitude.length;
-    }
-
-    public int getWidth() {
-        return this.amplitude[0].length;
-    }
 }
