@@ -26,13 +26,9 @@ public class SupportUpdateAlgorithm {
     }
 
     public Mask circumference(int radius, double xCenter, double yCenter, Mask mask) {
-        for (double i = 0; i <= 2 * Math.PI; i += 0.05) {
-            double x = xCenter + radius * Math.cos(i);
-            double y = yCenter + radius * Math.sin(i);
-            mask.getMask()[(int) x][(int) y] = false;
-        }
-        for (int j = (int) xCenter - radius + 1; j < (int) xCenter + radius; ++j) {
-            for (int k = (int) yCenter - radius + 1; k < (int) yCenter + radius; ++k) {
+
+        for (int j = (int) xCenter - radius ; j <= (int) xCenter + radius; ++j) {
+            for (int k = (int) yCenter - radius ; k <= (int) yCenter + radius; ++k) {
                 mask.getMask()[j][k] = false;
             }
         }

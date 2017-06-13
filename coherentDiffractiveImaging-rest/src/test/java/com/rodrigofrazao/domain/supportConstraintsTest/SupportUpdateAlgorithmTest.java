@@ -19,7 +19,8 @@ public class SupportUpdateAlgorithmTest {
     @Test
     public void createFalseCircunferenceTest(){
         mask.ones();
-        Mask newMask = supportUpdateAlgorithm.circumference(2,4,3,mask);
+        Mask newMask = supportUpdateAlgorithm.circumference(1,3,3,mask);
+        printArray(newMask.getMask());
        Assertions.assertThat(newMask.getMask()[3][3]).isFalse();
     }
 
