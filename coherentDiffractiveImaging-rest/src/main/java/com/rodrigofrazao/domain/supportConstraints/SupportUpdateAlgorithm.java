@@ -11,7 +11,7 @@ public class SupportUpdateAlgorithm {
     public ArrayList updateNewMasks(ArrayList<Mask> masks,int radius){
         for(int i =0; i<masks.size();++i){
             int[] position = findRandomPosition(masks.get(i));
-            masks.set(i,circumference(radius, (double) position[0], (double) position[1], masks.get(i)));
+            masks.set(i, createForbiddenArea(radius, (double) position[0], (double) position[1], masks.get(i)));
         }
         return masks;
     }
@@ -20,12 +20,12 @@ public class SupportUpdateAlgorithm {
         ArrayList<Mask> maskList = new ArrayList<>();
         for (int i = 0; i < nbrOfNewMasks; ++i) {
             int[] position = findRandomPosition(mask);
-            maskList.add(circumference(radius, (double) position[0], (double) position[1], mask));
+            maskList.add(createForbiddenArea(radius, (double) position[0], (double) position[1], mask));
         }
         return maskList;
     }
 
-    public Mask circumference(int radius, double xCenter, double yCenter, Mask mask) {
+    public Mask createForbiddenArea(int radius, double xCenter, double yCenter, Mask mask) {
 
         for (int j = (int) xCenter - radius ; j <= (int) xCenter + radius; ++j) {
             for (int k = (int) yCenter - radius ; k <= (int) yCenter + radius; ++k) {
