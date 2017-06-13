@@ -14,7 +14,12 @@ public class MaskTest {
 
     @Before
     public void setUp(){
-        mask = new Mask(2,3);
+        mask = new Mask(5,8);
+    }
+
+    @Test
+    public void test(){
+        printArray(mask.standardMask());
     }
 
     @Test

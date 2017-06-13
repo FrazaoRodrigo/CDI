@@ -1,5 +1,6 @@
 package com.rodrigofrazao.domain.algorithms;
 
+import com.rodrigofrazao.domain.image.AmplitudeOnlyImage;
 import com.rodrigofrazao.domain.image.ComplexImage;
 import com.rodrigofrazao.domain.image.ImageService;
 import com.rodrigofrazao.domain.supportConstraints.Mask;
@@ -7,13 +8,21 @@ import com.rodrigofrazao.domain.supportConstraints.Mask;
 import java.awt.*;
 
 public class PhasingAlgorithm {
-    ImageService imageService;
+
     ComplexImage guess;
     ComplexImage fourierTransformedImage;
-    Mask mask;
     double[][] diffractionPattern;
 
-    public PhasingAlgorithm() {
+    public PhasingAlgorithm(double[][] diffractionPattern) {
+        diffractionPattern=diffractionPattern;
+        guess= new AmplitudeOnlyImage(new double[diffractionPattern.length][diffractionPattern[0].length]);
+        fourierTransformedImage=setUpWithRandomPhase();
+    }
+
+   public ComplexImage setUpWithRandomPhase() {
+        ComplexImage initialImage = new AmplitudeOnlyImage(diffractionPattern);
+        initialImage.addRandomPhase();
+        return initialImage;
     }
 
     public double errorCalculation(ComplexImage image) {
@@ -29,15 +38,9 @@ public class PhasingAlgorithm {
         return error;
     }
 
-    public Image reconstructedImage() {
-        return imageService.guessToImageDisplay(guess);
-    }
 
     public ComplexImage getGuess() {
         return guess;
     }
 
-    public Mask getMask() {
-        return mask;
-    }
 }

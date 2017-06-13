@@ -10,8 +10,6 @@ import java.util.Arrays;
 
 public class ImageService {
 
-
-
     public Image guessToImageDisplay(ComplexImage pixels) {
         int height = pixels.getAmplitude().length;
         int width = pixels.getAmplitude()[0].length;

@@ -60,8 +60,8 @@ public class ComplexImage {
        return inverseXform2D(re(),im());
     }
 
-    public ComplexImage fft(ComplexImage realPlaneImageWithSupport) {
-         return twoDfft(realPlaneImageWithSupport.getAmplitude());
+    public ComplexImage fft() {
+         return twoDfft(amplitude);
     }
 
 
@@ -87,21 +87,43 @@ public class ComplexImage {
         return width;
     }
 
-    public boolean equals(Object o) {
-        if(this == o) {
-            return true;
-        } else if(o != null && this.getClass() == o.getClass()) {
-            ComplexImage that = (ComplexImage)o;
-            return !Arrays.deepEquals(this.amplitude, that.amplitude)?false:Arrays.deepEquals(this.phase, that.phase);
-        } else {
-            return false;
+    public ComplexImage withSupportConstraint(Mask mask) {
+        double[][] array = new double[height][width];
+
+        for(int j = 0; j < height; ++j) {
+            for(int k = 0; k < width; ++k) {
+                int myInt = mask.getMask()[j][k]?1:0;
+                array[j][k] = amplitude[j][k] * (double)myInt;
+            }
         }
+
+        return new  AmplitudeOnlyImage(array);
     }
 
-    public int hashCode() {
-        int result = Arrays.deepHashCode(this.amplitude);
-        result = 31 * result + Arrays.deepHashCode(this.phase);
-        return result;
+
+    public ComplexImage withInverseSupportConstraint(Mask mask) {
+
+        double[][] array = new double[height][width];
+
+        for(int j = 0; j < height; ++j) {
+            for(int k = 0; k < width; ++k) {
+                int myInt = mask.getMask()[j][k]?0:1;
+                array[j][k] = amplitude[j][k] * (double)myInt;
+            }
+        }
+
+        return new  AmplitudeOnlyImage(array);
     }
 
+    public Mask toBinaryMask( double threshold){
+        boolean[][] binaryGuess = new boolean[height][width];
+
+        for(int j = 0; j < height; ++j) {
+            for(int k = 0; k < width; ++k) {
+                boolean b = (amplitude[j][k]>threshold);
+                binaryGuess[j][k] = b;
+            }
+        }
+        return new Mask(binaryGuess);
+    }
 }
