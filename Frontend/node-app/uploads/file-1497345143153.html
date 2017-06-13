@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+</style>
+ 
+  <script type="text/javascript">
+   function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+		  
+   }
+   function toggle_visibilityWithEffect(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+		
+          e.style.display = 'block';
+		  
+		  
+		
+   }
+function mouseOver()  {
+    toggle_visibility('input');
+}
+
+ function mouseout() {
+    toggle_visibility('input');
+}
+</script>
+</head>
+<body style=background-color:#8e0032;>
+<div class="flex-container">
+<pre><h1>CV</h1>
+<button type="button" onclick="toggle_visibility('adress');">Persoonlijke Gegevens</button>
+
+<address id="adress" class="hidden">Pieter Sterckx
+K.M.Cuypersstraat 68
+3271 Zichem, Vlaams-Brabant 
+GSM: 0497742910 
+<a href="mailto:pietersterckx@yahoo.com">Emailadres</a></address>
+<h2 id="taal" onmouseover="mouseOver()" onmouseout="mouseout()" style="display:inline;">Talen</h2>
+<div id="input" class="hidden">
+Nederlands									Moedertaal
+Engels										Uitstekend
+Frans										Goed
+</div>
+<h3 onclick="toggle_visibility('ervaar');">IT</h3>
+<table id="ervaar" style="width:100%" class="hidden">
+<tr>
+<th>Ervaring met</th>
+<th>niveau</th>
+</tr>
+<tr>
+<td>Windows AD + alle Clients + Servers 2000/2003</td>
+<td>Basis kennis</td>
+</tr>
+<tr>
+<td>Lotus Notes Client</td>	
+<td>Basis kennis</td>	
+</tr>
+<td>Unix/Linux/AS400</td>	
+<td>Basis kennis</td>	
+<tr>
+<td>Hardware</td>
+<td>Basis kennis</td>	
+</tr>
+<tr>
+<td>Microsoft Office</td>
+<td>Basis kennis</td>	
+</tr>
+<tr>
+<td>SAP</td>	 	
+<td>Basis kennis</td>										
+</tr>
+<tr>
+<td>DHCP/DNS//TCP-IP/Microsoft ISA</td>	 
+<td>Basis kennis</td>	
+</tr>
+</table>
+<button class="button button5" onclick="toggle_visibilityWithEffect('effect')">Opleidingen</button>
+<div class="effect">
+<table style="width:100%" class="hidden"id="effect">
+<tr>
+<th>wat</th>
+<th>wanneer</th>
+</tr>
+<tr>
+<td>ASO ZVD 
+Demerstraat12, Diest</td>
+<td>1995-2002</td>							
+</tr>
+<tr>
+<td>Cursus PC en Netwerk Technicus van VDAB/Cevora</td>  	
+<td>2005-2006</td></tr>
+<tr>
+<td>MCP voor Windows XP</td>	
+<td>2007</td>
+</tr>
+<tr>
+<td>Cevora Cursussen: Windows server 2008 - Windows 7 - ISA server - Linux voor systeemverantwoordelijken</td>
+<td>door de jaren heen</td>
+</tr>
+</table>
+</div>
+
+
+
+
+
+
+
+
+<div class="polaroid">
+<div class="text">
+  <h3>Werkervaring</h3>
+ </div>
+<img src="chaingang.jpg" alt="chaingang" class="image" style="width:900px;height:470px;border:0;display: block;margin: auto;">
+  
+
+
+<div class="overlay">
+<div class="overlay_text">
+<ul>
+ <h3>Het verleden</h3>
+<li>Datacenter Operator Cegeka Hasselt	 01/2010 – Nu
+Argenta/Aviapartner/MLV: helpdesk - AS400 support - Unicenter job management - Server monitoring – Tapehandling – Mainframe support</li>
+
+<li>First line Helpdesk HP Vilvoorde	09/2009 – 12/2009
+Saint Gobain Benelux: problem - change management</li>
+
+<li>System Server Operator IBM Brno(CZ)	05/2008 – 08/2009 
+Hypermarkten Carrefour Frankrijk: Server monitoring 24x7 (met HP, DELL, IBM consoles) - manuele checks - problem management
+Supermarkten Carrefour Frankrijk: Server monitoring 24x7 (HP-Insight Manager console) - Problem management
+Danone Bureau Technique: 2de lijns helpdesk - manuele checks op SAP en TWS jobmanagement – rapportering</li>
+
+<li>Helpdesk Cegeka/IBM Evere	05/2006 – 05/2008 
+ABB Benelux helpdesk: Problem en Change management. AD users en groups administration. Software installaties.</li>
+</ul></div>
+  </div>
+  </div>
+
+
+
+
+ <div class="dropdown">
+  <h3 class="dropbtn">Varia</h3>
+  <div class="dropdown-content">
+    <a>SchaakBeest</a>
+    <a>Rijbewijs B</a>
+  
+  </div>
+</div>
+
+<a href="http://www.rokadewesterlo.be/" target="_blank">
+ <img src="chess.jpg" alt="www.rokadewesterlo.be" style="width:300px;height:157px;border:0;display: inline;margin: auto;"></a>
+  </div>
+  </pre>
+
+
+</body>
+</html>
