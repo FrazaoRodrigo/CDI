@@ -1,0 +1,19 @@
+.navbar-nav a.active {
+    background-color: #e7e7e7 !important;
+    color: #555 !important;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+.table tr.active td {
+  background-color:#123456 !important;
+  color: white;
+}
