@@ -10,8 +10,8 @@ import static com.rodrigofrazao.domain.fourierTransform.InverseTwoD_FFT.inverseX
 import static com.rodrigofrazao.domain.fourierTransform.TwoD_FFT.twoDfft;
 
 public class ComplexImage {
-    double[][] amplitude,phase;
-    int height,width;
+   public double[][] amplitude,phase;
+   public int height,width;
 
     public ComplexImage(){}
 

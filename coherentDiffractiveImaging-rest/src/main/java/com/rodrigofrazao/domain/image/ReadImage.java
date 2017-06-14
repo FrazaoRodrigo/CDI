@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class ReadImage {
+
     BufferedImage image;
 
     public ReadImage(File imagePath) {
