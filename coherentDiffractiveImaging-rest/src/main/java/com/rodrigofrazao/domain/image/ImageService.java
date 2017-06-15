@@ -8,7 +8,10 @@ import sun.misc.BASE64Encoder;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.color.ColorSpace;
 import java.awt.image.BufferedImage;
+import java.awt.image.ColorConvertOp;
+import java.awt.image.DataBufferByte;
 import java.awt.image.WritableRaster;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -27,14 +30,15 @@ public class ImageService {
         int height = pixels.getAmplitude().length;
         int width = pixels.getAmplitude()[0].length;
         double[] result = Arrays.stream(pixels.getAmplitude()).flatMapToDouble(Arrays::stream).toArray();
-        BufferedImage image = new BufferedImage(height,width, 10);
-        WritableRaster raster = (WritableRaster)image.getData();
-        raster.setPixels(0, 0,  height,width, result);
+        BufferedImage image = new BufferedImage(height,width, BufferedImage.TYPE_BYTE_GRAY);
+        WritableRaster raster = image.getRaster();
+        raster.setPixels(0, 0, height, width, result);
+        image.setData(raster);
         return image;
     }
 
-    public ComplexImage frontEndImageToComplexImage(InputStream inputStream) throws IOException {
-        ReadImage image = new ReadImage(inputStream);
+    public ComplexImage frontEndImageToComplexImage(BufferedImage bufferedImage) throws IOException {
+        ReadImage image = new ReadImage(bufferedImage);
         return image.bufferedImageToComplexImage();
     }
 

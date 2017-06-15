@@ -22,20 +22,18 @@ public class ReadImage {
         }
     }
 
-    public ReadImage(InputStream inputStream) throws IOException {
-        try {
-            image = ImageIO.read(inputStream);
-        } catch (IOException er) {
-            System.err.println("IOException: " + er.getMessage());
-        }
-
+    public ReadImage(BufferedImage bufferedImage) throws IOException {
+    this.image=bufferedImage;
     }
 
+    public BufferedImage getBuffuredImage(){return image;}
+
     public BufferedImage buffuredImageToGrayImage(){
-        BufferedImage out = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_ARGB);
-        ColorConvertOp op = new ColorConvertOp(image.getColorModel().getColorSpace(), ColorSpace.getInstance(ColorSpace.CS_GRAY),  null);
-        op.filter(image, out);
-        this.image = out;
+       BufferedImage gray = new BufferedImage(image.getWidth(),image.getHeight(), BufferedImage.TYPE_BYTE_GRAY);
+        ColorConvertOp op = new ColorConvertOp(
+                image.getColorModel().getColorSpace(),
+                gray.getColorModel().getColorSpace(),null);
+        image= op.filter(image,gray);
         return image;
     }
 
@@ -77,4 +75,18 @@ public class ReadImage {
         return this.image.getHeight();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ReadImage image1 = (ReadImage) o;
+
+        return image != null ? image.equals(image1.image) : image1.image == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return image != null ? image.hashCode() : 0;
+    }
 }

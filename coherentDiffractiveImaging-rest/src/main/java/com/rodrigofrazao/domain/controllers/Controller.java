@@ -4,16 +4,19 @@ import com.rodrigofrazao.domain.image.ComplexImage;
 import com.rodrigofrazao.domain.image.ImageService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import sun.misc.BASE64Decoder;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.util.Base64;
 
 
 @RestController
 public class Controller {
     ImageService imageService = new ImageService();
     ComplexImage image;
+    BufferedImage test;
 
     @RequestMapping("/ro")
     public String index() {
@@ -21,11 +24,15 @@ public class Controller {
     }
 
 
-    @RequestMapping(value = "/upload", method = RequestMethod.POST,consumes = "multipart/form-data")
-    public void upload(@RequestParam("file") MultipartFile file) throws IllegalStateException, IOException {
-        byte [] byteArr=file.getBytes();
-        InputStream inputStream = new ByteArrayInputStream(byteArr);
-        image = imageService.frontEndImageToComplexImage(inputStream);
+    @RequestMapping(value = "/upload", method = RequestMethod.POST, consumes = "multipart/form-data")
+    public void upload(@RequestParam("imageString") String imageString) throws IllegalStateException, IOException {
+
+        String base64Image = imageString.split(",")[0];
+        byte[] imageBytes = javax.xml.bind.DatatypeConverter.parseBase64Binary(base64Image);
+
+        BufferedImage bufferedImage = ImageIO.read(new ByteArrayInputStream(imageBytes));
+        test = bufferedImage;
+        image = imageService.frontEndImageToComplexImage(bufferedImage);
     }
 
     @RequestMapping(value = "/display", method = RequestMethod.GET)
@@ -35,7 +42,17 @@ public class Controller {
 
     @RequestMapping(value = "/fft", method = RequestMethod.GET)
     public String fft() throws IOException {
-        image=imageService.fft(image);
+        image = imageService.fft(image);
         return imageService.convertComplexImageToFrontEnd(image);
     }
+
+    @RequestMapping(value = "/displaytest", method = RequestMethod.GET)
+    public String displaytest() throws IOException {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        baos.flush();
+        ImageIO.write(test,"png",baos);
+        return Base64.getEncoder().encodeToString(baos.toByteArray());
+    }
 }
+
+
