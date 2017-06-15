@@ -13,7 +13,6 @@ var upload_component_1 = require("./upload/upload.component");
 var display_component_1 = require("./display/display.component");
 var app_routing_1 = require("./app.routing");
 var ng2_file_upload_1 = require("ng2-file-upload");
-var photoservice_1 = require("./services/photoservice");
 var http_1 = require("@angular/http");
 require("rxjs/Rx");
 var AppModule = (function () {
@@ -26,7 +25,6 @@ AppModule = __decorate([
         imports: [platform_browser_1.BrowserModule, app_routing_1.routing, http_1.HttpModule],
         declarations: [app_component_1.AppComponent, display_component_1.DisplayComponent, upload_component_1.UploadComponent, ng2_file_upload_1.FileSelectDirective, ng2_file_upload_1.FileDropDirective],
         bootstrap: [app_component_1.AppComponent],
-        providers: [photoservice_1.PhotoService]
     })
 ], AppModule);
 exports.AppModule = AppModule;

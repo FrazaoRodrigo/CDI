@@ -8,6 +8,7 @@ import java.awt.image.Raster;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class ReadImage {
 
@@ -21,11 +22,21 @@ public class ReadImage {
         }
     }
 
-    public void buffuredImageToGrayImage(){
+    public ReadImage(InputStream inputStream) throws IOException {
+        try {
+            image = ImageIO.read(inputStream);
+        } catch (IOException er) {
+            System.err.println("IOException: " + er.getMessage());
+        }
+
+    }
+
+    public BufferedImage buffuredImageToGrayImage(){
         BufferedImage out = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_ARGB);
         ColorConvertOp op = new ColorConvertOp(image.getColorModel().getColorSpace(), ColorSpace.getInstance(ColorSpace.CS_GRAY),  null);
         op.filter(image, out);
         this.image = out;
+        return image;
     }
 
     public double[][] bufferedImageToArray() {

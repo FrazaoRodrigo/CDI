@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PhotoService } from '../services/photoservice'
 
 @Component({
     selector: 'app-display',
@@ -12,7 +11,7 @@ export class DisplayComponent  implements OnInit {
     selectedRow : Number;
 
 
-    constructor(private photoService: PhotoService) {
+    constructor() {
         this.fileLists=[];
         this.welcome = "Choose which Image to process."
        
@@ -20,10 +19,7 @@ export class DisplayComponent  implements OnInit {
     };
 
     ngOnInit() {
-        this.photoService.getPhotos()
-            .subscribe(
-            photos => this.fileLists = photos,
-            error => this.errorMessage = <any>error);
+      
     }
 setClickedRow(index){
         this.selectedRow = index;

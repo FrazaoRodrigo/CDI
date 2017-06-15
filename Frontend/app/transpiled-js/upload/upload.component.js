@@ -11,10 +11,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var ng2_file_upload_1 = require("ng2-file-upload");
+var imageService_1 = require("../services/imageService");
 var UploadComponent = (function () {
-    function UploadComponent() {
-        this.uploader = new ng2_file_upload_1.FileUploader({ url: 'http://localhost:3001/upload' });
-        this.welcome = "The Rodrigro Project";
+    function UploadComponent(imageService) {
+        var _this = this;
+        this.imageService = imageService;
+        this.uploader = new ng2_file_upload_1.FileUploader({ url: 'http://localhost:8080/fft' });
+        this.welcome = "The Rodrigo Project";
+        imageService.fft().then(function (response) {
+            _this.imageData = 'data:image/png;base64,' + response.content;
+        });
     }
     ;
     return UploadComponent;
@@ -24,7 +30,7 @@ UploadComponent = __decorate([
         selector: 'app-upload',
         templateUrl: 'app/upload/upload.component.html'
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [imageService_1.ImageService])
 ], UploadComponent);
 exports.UploadComponent = UploadComponent;
 ;

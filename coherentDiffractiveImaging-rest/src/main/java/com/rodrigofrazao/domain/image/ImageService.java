@@ -4,6 +4,7 @@ package com.rodrigofrazao.domain.image;
 
 import com.rodrigofrazao.domain.complexNumbers.Complex;
 import org.springframework.web.multipart.MultipartFile;
+import sun.misc.BASE64Encoder;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -12,9 +13,12 @@ import java.awt.image.WritableRaster;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Arrays;
+import java.util.Base64;
 
 import static com.rodrigofrazao.domain.fourierTransform.TwoD_FFT.twoDfft;
+import static java.util.Base64.getEncoder;
 
 
 public class ImageService {
@@ -29,22 +33,22 @@ public class ImageService {
         return image;
     }
 
-    public ComplexImage getUploadedImageToComplexImage(File file){
-       ReadImage image = new ReadImage(file);
-       return image.bufferedImageToComplexImage();
+    public ComplexImage frontEndImageToComplexImage(InputStream inputStream) throws IOException {
+        ReadImage image = new ReadImage(inputStream);
+        return image.bufferedImageToComplexImage();
     }
+
 
     public ComplexImage fft(ComplexImage image){
       return  twoDfft(image.getAmplitude());
     }
 
-    public MultipartFile convertImageToFrontEnd(ComplexImage image, String imageName, String originalFileName, String contentType, long size) throws IOException {
+    public String convertComplexImageToFrontEnd(ComplexImage image) throws IOException {
         BufferedImage bufferedImage = complexImageToBufferedImage(image);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         baos.flush();
         ImageIO.write(bufferedImage,"png",baos);
-        MultipartFile multipartFile = new MultipartImage(baos.toByteArray(),imageName,originalFileName,contentType,size);
-        return multipartFile;
+        return Base64.getEncoder().encodeToString(baos.toByteArray());
     }
 
 }

@@ -10,26 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var DisplayComponent = (function () {
-    function DisplayComponent() {
-        this.fileLists = [];
-        this.welcome = "Choose which Image to process.";
+var http_1 = require("@angular/http");
+var environment_1 = require("../environments/environment");
+var ImageService = (function () {
+    function ImageService(_http) {
+        this._http = _http;
     }
-    ;
-    DisplayComponent.prototype.ngOnInit = function () {
+    ImageService.prototype.fft = function () {
+        return this._http.get(environment_1.environment.baseUrl + "/fft")
+            .toPromise()
+            .then(function (response) { return response.json(); });
     };
-    DisplayComponent.prototype.setClickedRow = function (index) {
-        this.selectedRow = index;
-    };
-    return DisplayComponent;
+    return ImageService;
 }());
-DisplayComponent = __decorate([
-    core_1.Component({
-        selector: 'app-display',
-        templateUrl: 'app/display/display.component.html'
-    }),
-    __metadata("design:paramtypes", [])
-], DisplayComponent);
-exports.DisplayComponent = DisplayComponent;
-;
-//# sourceMappingURL=display.component.js.map
+ImageService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], ImageService);
+exports.ImageService = ImageService;
+//# sourceMappingURL=imageService.js.map
