@@ -29,12 +29,22 @@ public class ImageService {
     public BufferedImage complexImageToBufferedImage(ComplexImage pixels) {
         int height = pixels.getAmplitude().length;
         int width = pixels.getAmplitude()[0].length;
-        double[] result = Arrays.stream(pixels.getAmplitude()).flatMapToDouble(Arrays::stream).toArray();
-        BufferedImage image = new BufferedImage(height,width, BufferedImage.TYPE_BYTE_GRAY);
-        WritableRaster raster = image.getRaster();
-        raster.setPixels(0, 0, height, width, result);
-        image.setData(raster);
-        return image;
+
+        BufferedImage b = new BufferedImage(height, width, BufferedImage.TYPE_BYTE_GRAY);
+
+        for(int x = 0; x < height; x++) {
+            for(int y = 0; y < width; y++) {
+                int rgb = (int)pixels.getAmplitude()[x][y]<<16 | (int)pixels.getAmplitude()[x][y] << 8 | (int)pixels.getAmplitude()[x][y];
+                b.setRGB(x, y, rgb);
+            }
+        }
+        return b;
+      //  double[] result = Arrays.stream(pixels.getAmplitude()).flatMapToDouble(Arrays::stream).toArray();
+       // BufferedImage image = new BufferedImage(height,width, BufferedImage.TYPE_BYTE_GRAY);
+        //WritableRaster raster = image.getRaster();
+        //raster.setPixels(0, 0, height, width, result);
+        //image.setData(raster);
+        //return image;
     }
 
     public ComplexImage frontEndImageToComplexImage(BufferedImage bufferedImage) throws IOException {
