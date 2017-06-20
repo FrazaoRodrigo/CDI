@@ -16,11 +16,14 @@ export class DisplayComponent {
   
  
   getImage(){
-    return this.http.get('${environment.baseUrl}/display').map(res => res.json().base64)
+    let headers = new Headers({ 'Content-Type': 'application/json' }); 
+    let options = new RequestOptions({ headers : headers }); 
+    return this.http.get('http://localhost:8080/display').map(res => res.json().base64,options)
     .subscribe(res => this.rest_response = res );
   }
 
   displayImage(){
-     this.showImage = "data:image/png;base64," + this.rest_response;
+    this.getImage();
+     this.showImage = this.rest_response;
   }
 }

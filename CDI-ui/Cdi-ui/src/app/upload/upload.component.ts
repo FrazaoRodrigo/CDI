@@ -10,23 +10,25 @@ import { environment } from '../../environments/environment';
 })
 export class UploadComponent {
 
-  public filestring: string; 
-  public url: string;
-    constructor(public http: Http,
-    url='http://localhost:8080/upload') { 
+  public filestring: string;
+  
+    constructor(public http: Http) { 
     } 
 
     changeListener($event): void {
-        let files =$event.target.files; 
-        var reader = new FileReader(); 
-        reader.onload = this._handleReaderLoaded.bind(this); 
-        reader.readAsBinaryString(files[0]);
-        this._handleReaderLoaded(reader);
-        this.postFile(this.filestring);
-}
+        this._readThis=$event.target;
+        }
+    
+    _readThis(inputValue: any):void {
+    var file:File = inputValue.files[0]; 
+    var myReader:FileReader = new FileReader();
+    myReader.readAsBinaryString(file);
+    this._handleReaderLoaded(myReader);
+    this.postFile(this.filestring);  
+    }
  
     _handleReaderLoaded(readerEvt) { 
-        var binaryString = readerEvt.target.result; 
+        var binaryString = readerEvt; 
         this.filestring = btoa(binaryString);  // Converting binary string data. 
    } 
   
@@ -38,7 +40,7 @@ export class UploadComponent {
 
         let headers = new Headers({ 'Content-Type': 'application/json' }); 
         let options = new RequestOptions({ headers: headers }); 
-        this.http.post(this.url, JSON.stringify({body: this.filestring }), options).                
+        this.http.post('http://localhost:8080/upload', JSON.stringify({inputValue }), options).                
             subscribe( 
             (data) => { 
                 console.log('Response received'); 
