@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { UploadComponent } from './upload/upload.component';
 import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
 import 'rxjs/Rx';
+import { DisplayComponent } from './display/display.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UploadComponent,
     FileSelectDirective,
-    FileDropDirective
+    FileDropDirective,
+    DisplayComponent
   ],
   imports: [
     routing,

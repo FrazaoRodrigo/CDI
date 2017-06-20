@@ -9,13 +9,14 @@ import java.io.*;
 
 
 @RestController
+@CrossOrigin(origins = "*")
 public class ImageController {
     private ImageService imageService = new ImageService();
     private ComplexImage image;
 
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
-    public void upload(@RequestParam("imageString") String imageString) throws IllegalStateException, IOException {
-        BufferedImage bufferedImage = imageService.decodeImageFromFrontEnd(imageString);
+    public void upload(@RequestBody String body) throws IllegalStateException, IOException {
+        BufferedImage bufferedImage = imageService.decodeImageFromFrontEnd(body);
         image = imageService.frontEndImageToComplexImage(bufferedImage);
     }
 
