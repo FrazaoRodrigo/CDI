@@ -1,0 +1,29 @@
+ <md-sidenav-layout [class.m2app-dark]="isDarkTheme">
+  <md-sidenav #sidenav mode="side" class="app-sidenav">
+    Sidenav
+  </md-sidenav>
+ 
+ 
+ <md-toolbar color="primary">
+   The fuckng App
+    <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button>
+  </md-toolbar>
+  
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a routerLink="/upload" routerLinkActive="active">Upload</a></li>
+          <li><a routerLink="/display" routerLinkActive="active">Show Files</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<div class="container">
+  <div class="row">
+    <!-- routing here -->
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+</md-sidenav-layout>
