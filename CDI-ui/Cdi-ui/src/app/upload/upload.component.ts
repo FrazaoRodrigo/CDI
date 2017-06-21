@@ -10,40 +10,44 @@ import { environment } from '../../environments/environment';
 })
 export class UploadComponent {
 
-  public filestring: string;
+  public base64textString: string;
   
     constructor(public http: Http) { 
     } 
 
     changeListener($event): void {
-        this._readThis=$event.target;
-        }
-    
-    _readThis(inputValue: any):void {
-    var file:File = inputValue.files[0]; 
-    var myReader:FileReader = new FileReader();
-    myReader.readAsBinaryString(file);
-    this._handleReaderLoaded(myReader);
-    this.postFile(this.filestring);  
+        this.handleFileSelect($event);
     }
- 
-    _handleReaderLoaded(readerEvt) { 
-        var binaryString = readerEvt; 
-        this.filestring = btoa(binaryString);  // Converting binary string data. 
-   } 
+    
+    handleFileSelect(evt){
+      var files = evt.target.files;
+      var file = files[0];
+
+    if (files && file) {
+        var reader = new FileReader();
+
+        reader.onload =this._handleReaderLoaded.bind(this);
+
+        reader.readAsBinaryString(file);
+    }
+  }
+
+
+  _handleReaderLoaded(readerEvt) {
+     var binaryString = readerEvt.target.result;
+            this.base64textString= btoa(binaryString);
+            this.postFile(this.base64textString);
+    }
+
   
      
     postFile(inputValue: any): void { 
-        var formData = new FormData();
-        formData.append("name", "Name");
-        formData.append("file",  inputValue.files[0]);
-
         let headers = new Headers({ 'Content-Type': 'application/json' }); 
         let options = new RequestOptions({ headers: headers }); 
-        this.http.post('http://localhost:8080/upload', JSON.stringify({inputValue }), options).                
-            subscribe( 
-            (data) => { 
-                console.log('Response received'); 
+        this.http.post('http://localhost:8080/upload', inputValue, options)
+        .subscribe( 
+            (inputValue) => { 
+                console.log('Response received')
             }, 
             (err) => { console.log(err); }, 
             () => console.log('Authentication Complete') 

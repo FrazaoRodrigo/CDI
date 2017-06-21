@@ -17,6 +17,9 @@ public class ImageService {
     }
 
     public ComplexImage frontEndImageToComplexImage(BufferedImage bufferedImage) throws IOException {
+        if (bufferedImage == null){
+            throw new InvalidObjectException("Base64 image is wrong results in a NULL Buffured image");
+        }
         ReadImage image = new ReadImage(bufferedImage);
         return image.bufferedImageToComplexImage();
     }

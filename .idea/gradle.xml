@@ -11,7 +11,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/Cdi-ui" />
+            <option value="$PROJECT_DIR$/CDI-ui" />
             <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest" />
           </set>
         </option>
