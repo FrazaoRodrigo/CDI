@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
+import {Observable} from 'rxjs/Observable';
 import { Headers, Http, RequestOptions } from '@angular/http'; 
 
 @Component({
@@ -10,20 +11,28 @@ import { Headers, Http, RequestOptions } from '@angular/http';
 export class DisplayComponent {
 
   rest_response: any;
-  showImage: any;
+  private image : any;
 
-  constructor(private _DomSanitizationService: DomSanitizer,public http: Http) { }
+
+
+  constructor(public http: Http,public _DomSanitizer: DomSanitizer) { }
+
   
  
-  getImage(){
+  getImage() {
     let headers = new Headers({ 'Content-Type': 'application/json' }); 
     let options = new RequestOptions({ headers : headers }); 
-    return this.http.get('http://localhost:8080/display').map(res => res.json(),options)
-    .subscribe(res => this.rest_response = res );
+    return this.http.get('http://localhost:8080/display').map(res => res.json(),options);
+ 
   }
 
   displayImage(){
-    this.getImage();
-    this.showImage ='data:image/png;base64,' + this.rest_response;
+    this.getImage().subscribe(res => {this.rest_response = res;
+    this.image ='data:image/jpg;base64,' + this.rest_response["response"];
+    })
   }
+
+
+
+
 }

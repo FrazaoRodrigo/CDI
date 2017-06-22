@@ -16,9 +16,10 @@ import { DisplayComponent } from './display/display.component';
   declarations: [
     AppComponent,
     UploadComponent,
+    DisplayComponent,
     FileSelectDirective,
-    FileDropDirective,
-    DisplayComponent
+    FileDropDirective
+   
   ],
   imports: [
     routing,

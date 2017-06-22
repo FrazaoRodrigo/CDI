@@ -10,6 +10,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="coherentDiffractiveImaging-rest_main" />
+    <orderEntry type="library" name="Gradle: org.json:json:20090211" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-web:1.5.2.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-actuator:1.5.2.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />

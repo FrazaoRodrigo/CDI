@@ -28,10 +28,12 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
+    compile group: 'org.json', name: 'json', version: '20090211'
     compile("org.springframework.boot:spring-boot-starter-web")
     // tag::actuator[]
     compile("org.springframework.boot:spring-boot-starter-actuator")
     // end::actuator[]
     testCompile("junit:junit")
     testCompile("org.assertj:assertj-core:3.7.0")
+
 }
