@@ -36,8 +36,10 @@ public class ErrorReduction extends PhasingAlgorithm {
     public ComplexImage errorReduction(ComplexImage image, Mask mask) {
         image.setAmplitude(diffractionPattern)
                 .invfft()
+                .shift()
                 .withSupportConstraint(mask)
-                .fft();
+                .fft()
+                .shiftWithPhase();
         return image;
     }
 }

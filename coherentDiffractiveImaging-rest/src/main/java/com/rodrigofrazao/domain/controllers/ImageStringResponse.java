@@ -1,10 +1,10 @@
 package com.rodrigofrazao.domain.controllers;
 
-public class StringResponse {
+public class ImageStringResponse {
 
     private String response;
 
-    public StringResponse(String s) {
+    public ImageStringResponse(String s) {
         this.response = s;
     }
 

@@ -2,17 +2,56 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7b31a83-46af-4396-a6c9-d7355f3b4c41" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_json_json_20090211.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/controllers/StringResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/complexNumbers/ComplexArray.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/CT_1D_FFT.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/CT_TwoD_FFT.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/Fftshift.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/ThreadService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/Threaded_Inline_TwoD_FFT.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/Threaded_Inverse_TwoD_FFT.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/Threaded_TwoD_FFT.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/complexNumbers/ComplexArrayTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/fourierTransform/InverseFourierTransformTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/imageTest/InlineImageTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/main/com/rodrigofrazao/domain/controllers/StringResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/main/com/rodrigofrazao/domain/image/MultipartImage.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/controllers/StringResponse.java" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/controllers/ImageStringResponse.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/MultipartImage.java" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/InlineComplexImage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/main/com/rodrigofrazao/domain/algorithms/ErrorReduction.class" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/main/com/rodrigofrazao/domain/algorithms/ErrorReduction.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/main/com/rodrigofrazao/domain/controllers/ImageController.class" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/main/com/rodrigofrazao/domain/controllers/ImageController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/coherentDiffractiveImaging-rest/coherentDiffractiveImaging-rest_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/coherentDiffractiveImaging-rest/coherentDiffractiveImaging-rest_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/coherentDiffractiveImaging-rest/coherentDiffractiveImaging-rest_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/coherentDiffractiveImaging-rest/coherentDiffractiveImaging-rest_test.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/main/com/rodrigofrazao/domain/image/AmplitudeOnlyImage.class" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/main/com/rodrigofrazao/domain/image/AmplitudeOnlyImage.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/main/com/rodrigofrazao/domain/image/ComplexImage.class" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/main/com/rodrigofrazao/domain/image/ComplexImage.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/main/com/rodrigofrazao/domain/image/ImageService.class" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/main/com/rodrigofrazao/domain/image/ImageService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/main/com/rodrigofrazao/domain/image/ReadImage.class" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/main/com/rodrigofrazao/domain/image/ReadImage.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/main/com/rodrigofrazao/domain/supportConstraints/Mask.class" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/main/com/rodrigofrazao/domain/supportConstraints/Mask.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/test/com/rodrigofrazao/domain/complexNumbers/ComplexNumbersTest.class" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/test/com/rodrigofrazao/domain/complexNumbers/ComplexNumbersTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/test/com/rodrigofrazao/domain/fourierTransform/FourierTransformTest.class" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/test/com/rodrigofrazao/domain/fourierTransform/FourierTransformTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/test/com/rodrigofrazao/domain/imageTest/ImageServiceTest.class" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/test/com/rodrigofrazao/domain/imageTest/ImageServiceTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/test/com/rodrigofrazao/domain/supportConstraintsTest/MaskTest.class" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build/classes/test/com/rodrigofrazao/domain/supportConstraintsTest/MaskTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/Capture.PNG" afterPath="$PROJECT_DIR$/images/Capture.PNG" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/Capturetest.PNG" afterPath="$PROJECT_DIR$/images/Capturetest.PNG" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CDI-ui/Cdi-ui/package.json" afterPath="$PROJECT_DIR$/CDI-ui/Cdi-ui/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CDI-ui/Cdi-ui/src/app/app.component.html" afterPath="$PROJECT_DIR$/CDI-ui/Cdi-ui/src/app/app.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CDI-ui/Cdi-ui/src/app/app.component.ts" afterPath="$PROJECT_DIR$/CDI-ui/Cdi-ui/src/app/app.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CDI-ui/Cdi-ui/src/app/app.module.ts" afterPath="$PROJECT_DIR$/CDI-ui/Cdi-ui/src/app/app.module.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CDI-ui/Cdi-ui/src/app/display/display.component.html" afterPath="$PROJECT_DIR$/CDI-ui/Cdi-ui/src/app/display/display.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CDI-ui/Cdi-ui/src/app/display/display.component.ts" afterPath="$PROJECT_DIR$/CDI-ui/Cdi-ui/src/app/display/display.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build.gradle" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CDI-ui/Cdi-ui/src/app/upload/upload.component.html" afterPath="$PROJECT_DIR$/CDI-ui/Cdi-ui/src/app/upload/upload.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CDI-ui/Cdi-ui/src/index.html" afterPath="$PROJECT_DIR$/CDI-ui/Cdi-ui/src/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CDI-ui/Cdi-ui/src/polyfills.ts" afterPath="$PROJECT_DIR$/CDI-ui/Cdi-ui/src/polyfills.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CDI-ui/Cdi-ui/src/styles.css" afterPath="$PROJECT_DIR$/CDI-ui/Cdi-ui/src/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/CdiApplication.java" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/CdiApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/algorithms/ErrorReduction.java" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/algorithms/ErrorReduction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/controllers/ImageController.java" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/controllers/ImageController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/AmplitudeOnlyImage.java" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/AmplitudeOnlyImage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ComplexImage.java" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ComplexImage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ImageService.java" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ImageService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ReadImage.java" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ReadImage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/supportConstraints/Mask.java" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/supportConstraints/Mask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/complexNumbers/ComplexNumbersTest.java" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/complexNumbers/ComplexNumbersTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/fourierTransform/FourierTransformTest.java" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/fourierTransform/FourierTransformTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/imageTest/ImageServiceTest.java" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/imageTest/ImageServiceTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/supportConstraintsTest/MaskTest.java" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/supportConstraintsTest/MaskTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/rest/.gradle/" />
@@ -63,20 +102,6 @@
                 <option name="myItemId" value=":coherentDiffractiveImaging-rest" />
                 <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ModuleNode" />
               </PATH_ELEMENT>
-            </PATH>
-            <PATH>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
-              </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="CDI" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
-              </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value=":coherentDiffractiveImaging-rest" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ModuleNode" />
-              </PATH_ELEMENT>
               <PATH_ELEMENT>
                 <option name="myItemId" value="Tasks" />
                 <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
@@ -102,6 +127,20 @@
               <PATH_ELEMENT>
                 <option name="myItemId" value="application" />
                 <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode$1" />
+              </PATH_ELEMENT>
+            </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="CDI" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value=":coherentDiffractiveImaging-rest" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ModuleNode" />
               </PATH_ELEMENT>
             </PATH>
             <PATH>
@@ -139,31 +178,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ImageService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ImageService.java">
+      <file leaf-file-name="FourierTransformTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/fourierTransform/FourierTransformTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="-68">
+              <caret line="34" column="56" lean-forward="false" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/build.gradle">
+      <file leaf-file-name="CT_1D_FFT.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/CT_1D_FFT.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="30" column="64" lean-forward="false" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
+            <state relative-caret-position="306">
+              <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImageController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/controllers/ImageController.java">
+      <file leaf-file-name="CT_TwoD_FFT.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/CT_TwoD_FFT.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="276">
+              <caret line="28" column="47" lean-forward="false" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -171,52 +210,77 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StringResponse.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/controllers/StringResponse.java">
+      <file leaf-file-name="InlineComplexImage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/InlineComplexImage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="446">
+              <caret line="92" column="51" lean-forward="false" selection-start-line="92" selection-start-column="51" selection-end-line="92" selection-end-column="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComplexNumbersTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/complexNumbers/ComplexNumbersTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="28" column="5" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="28" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PolarComplex.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/complexNumbers/PolarComplex.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComplexImage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ComplexImage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="59" column="52" lean-forward="true" selection-start-line="58" selection-start-column="15" selection-end-line="59" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Complex.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/complexNumbers/Complex.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+              <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComplexArrayTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/complexNumbers/ComplexArrayTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
               <folding>
-                <element signature="e#144#145#0" expanded="true" />
-                <element signature="e#177#178#0" expanded="true" />
-                <element signature="e#243#244#0" expanded="true" />
-                <element signature="e#291#292#0" expanded="true" />
-                <element signature="e#331#332#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CdiApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/CdiApplication.java">
+      <file leaf-file-name="ComplexArray.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/complexNumbers/ComplexArray.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+            <state relative-caret-position="255">
+              <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
               <folding>
-                <element signature="e#590#591#0" expanded="true" />
-                <element signature="e#655#656#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReadImage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ReadImage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="969">
-              <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1639#1640#0" expanded="false" />
-                <element signature="e#1708#1709#0" expanded="false" />
-                <element signature="e#1745#1746#0" expanded="false" />
-                <element signature="e#1778#1779#0" expanded="false" />
-                <element signature="e#1812#1813#0" expanded="false" />
-                <element signature="e#1852#1853#0" expanded="false" />
-                <element signature="e#2151#2152#0" expanded="false" />
-                <element signature="e#2196#2197#0" expanded="false" />
-                <element signature="e#2527#2528#0" expanded="false" />
-                <element signature="e#2586#2587#0" expanded="false" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -894,52 +958,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rodrigofrazao/domain/algorithms/PhasingAlgorithms.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rodrigofrazao/domain/complexNumbers/Complex.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rodrigofrazao/domain/complexNumbers/PolarComplex.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rodrigofrazao/domain/image/ReadImage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rodrigofrazao/domain/supportConstraints/Mask.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/rodrigofrazao/domain/complexNumbers/ComplexNumbersTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rodrigofrazao/domain/image/ComplexImage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rodrigofrazao/domain/fourierTransform/InverseTwoD_FFT.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rodrigofrazao/domain/fourierTransform/TwoD_FFT.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rodrigofrazao/domain/algorithms/PhasingAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/rodrigofrazao/domain/imageTest/ReadImageTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rodrigofrazao/domain/image/ImageService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rodrigofrazao/domain/algorithms/ErrorReduction.java" />
         <option value="$PROJECT_DIR$/settings.gradle" />
-        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/CdiApplication.java" />
         <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ComplexImageFactory.java" />
         <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/AmplitudeImage.java" />
         <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/DirectSpaceImage.java" />
         <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/imageTest/ComplexImageTest.java" />
-        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/complexNumbers/ComplexNumbersTest.java" />
         <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/InverseTwoD_FFT.java" />
         <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/TwoD_FFT.java" />
         <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/algorithms/PhasingAlgorithm.java" />
-        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/algorithms/ErrorReduction.java" />
         <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/algorithms/HIO.java" />
         <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/supportConstraints/supportUpdateAlgorithm.java" />
-        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/supportConstraintsTest/MaskTest.java" />
-        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/supportConstraints/Mask.java" />
         <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/algorithms/AlgorithmService.java" />
         <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/supportConstraintsTest/SupportUpdateAlgorithmTest.java" />
         <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/supportConstraints/SupportUpdateAlgorithm.java" />
-        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/MultipartImage.java" />
-        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ComplexImage.java" />
-        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/AmplitudeOnlyImage.java" />
         <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/imageTest/ReadImageTest.java" />
-        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/fourierTransform/FourierTransformTest.java" />
-        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ReadImage.java" />
         <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/controllers/Controller.java" />
-        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/imageTest/ImageServiceTest.java" />
         <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/config/CorsFilter.java" />
         <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/config/WebConfig.java" />
-        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ImageService.java" />
         <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/build.gradle" />
         <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/controllers/StringResponse.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/Fftshift.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/algorithms/ErrorReduction.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/AmplitudeOnlyImage.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/ThreadFactory.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/FFTThreadFactory.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/imageTest/ImageServiceTest.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/Threaded_Inverse_TwoD_FFT.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/Threaded_TwoD_FFT.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/supportConstraintsTest/MaskTest.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/supportConstraints/Mask.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/CdiApplication.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/MultipartImage.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/imageTest/InlineImageTest.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ReadImage.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/ThreadService.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ImageService.java" />
         <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/controllers/ImageController.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/complexNumbers/ComplexNumbersTest.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/fourierTransform/InverseFourierTransformTest.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/Threaded_Inline_TwoD_FFT.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/CT_1D_FFT.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ComplexImage.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/complexNumbers/ComplexArrayTest.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/fourierTransform/FourierTransformTest.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/complexNumbers/ComplexArray.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/InlineComplexImage.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/CT_TwoD_FFT.java" />
       </list>
     </option>
   </component>
@@ -964,9 +1033,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1010,6 +1079,108 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CDI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CDI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="coherentDiffractiveImaging-rest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CDI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CDI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="coherentDiffractiveImaging-rest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fourierTransform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CDI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CDI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="coherentDiffractiveImaging-rest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="complexNumbers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1093,7 +1264,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="image" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CDI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CDI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="coherentDiffractiveImaging-rest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="complexNumbers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1105,43 +1310,49 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$USER_HOME$/evaluations/build.gradle" />
+    <property name="last_opened_file_path" value="$USER_HOME$/cw" />
     <property name="extract.method.default.visibility" value="private" />
   </component>
-  <component name="RunManager" selected="Application.CdiApplication">
-    <configuration default="false" name="CdiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.FourierTransformTest.performance">
+    <configuration default="false" name="FourierTransformTest.fftTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.rodrigofrazao.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.rodrigofrazao.domain.CdiApplication" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="coherentDiffractiveImaging-rest_main" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="ReadImageTest.buffuredImageToComplexImageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.rodrigofrazao.domain.imageTest.*" />
+          <option name="PATTERN" value="com.rodrigofrazao.domain.fourierTransform.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="coherentDiffractiveImaging-rest_test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.rodrigofrazao.domain.imageTest" />
-      <option name="MAIN_CLASS_NAME" value="com.rodrigofrazao.domain.imageTest.ReadImageTest" />
-      <option name="METHOD_NAME" value="buffuredImageToComplexImageTest" />
+      <option name="PACKAGE_NAME" value="com.rodrigofrazao.domain.fourierTransform" />
+      <option name="MAIN_CLASS_NAME" value="com.rodrigofrazao.domain.fourierTransform.FourierTransformTest" />
+      <option name="METHOD_NAME" value="fftTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="FourierTransformTest.performance" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.rodrigofrazao.domain.fourierTransform.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="coherentDiffractiveImaging-rest_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.rodrigofrazao.domain.fourierTransform" />
+      <option name="MAIN_CLASS_NAME" value="com.rodrigofrazao.domain.fourierTransform.FourierTransformTest" />
+      <option name="METHOD_NAME" value="performance" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1181,19 +1392,19 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="ImageServiceTest.complexImageToBufferedImageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="ComplexArrayTest.getRowTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.rodrigofrazao.domain.imageTest.*" />
+          <option name="PATTERN" value="com.rodrigofrazao.domain.complexNumbers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="coherentDiffractiveImaging-rest_test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.rodrigofrazao.domain.imageTest" />
-      <option name="MAIN_CLASS_NAME" value="com.rodrigofrazao.domain.imageTest.ImageServiceTest" />
-      <option name="METHOD_NAME" value="complexImageToBufferedImageTest" />
+      <option name="PACKAGE_NAME" value="com.rodrigofrazao.domain.complexNumbers" />
+      <option name="MAIN_CLASS_NAME" value="com.rodrigofrazao.domain.complexNumbers.ComplexArrayTest" />
+      <option name="METHOD_NAME" value="getRowTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1207,22 +1418,30 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="CDI:coherentDiffractiveImaging-rest [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/coherentDiffractiveImaging-rest" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="bootRun" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
+    <configuration default="false" name="ComplexArrayTest.getCollumTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.rodrigofrazao.domain.complexNumbers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="coherentDiffractiveImaging-rest_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.rodrigofrazao.domain.complexNumbers" />
+      <option name="MAIN_CLASS_NAME" value="com.rodrigofrazao.domain.complexNumbers.ComplexArrayTest" />
+      <option name="METHOD_NAME" value="getCollumTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1430,19 +1649,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.CdiApplication" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.ReadImageTest.buffuredImageToComplexImageTest" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.FourierTransformTest.fftTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.FourierTransformTest.performance" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.FourierTransformTest.fourierTransformTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ImageServiceTest.complexImageToBufferedImageTest" />
-      <item index="4" class="java.lang.String" itemvalue="Gradle.CDI:coherentDiffractiveImaging-rest [bootRun]" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ComplexArrayTest.getRowTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ComplexArrayTest.getCollumTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.CdiApplication" />
-        <item index="1" class="java.lang.String" itemvalue="Gradle.CDI:coherentDiffractiveImaging-rest [bootRun]" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ImageServiceTest.complexImageToBufferedImageTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.FourierTransformTest.performance" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ComplexArrayTest.getRowTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ComplexArrayTest.getCollumTest" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.FourierTransformTest.fourierTransformTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.ReadImageTest.buffuredImageToComplexImageTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.FourierTransformTest.fftTest" />
       </list>
     </recent_temporary>
   </component>
@@ -1460,35 +1679,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FourierTransformTest_fourierTransformTest - 2017.06.15 at 14h 57m 35s.xml">
+    <history-entry file="ComplexArrayTest_getCollumTest - 2017.07.12 at 16h 06m 13s.xml">
+      <configuration name="ComplexArrayTest.getCollumTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ComplexArrayTest_getRowTest - 2017.07.12 at 16h 03m 19s.xml">
+      <configuration name="ComplexArrayTest.getRowTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ComplexArrayTest_getRowTest - 2017.07.12 at 16h 05m 22s.xml">
+      <configuration name="ComplexArrayTest.getRowTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ComplexArrayTest_getRowTest - 2017.07.12 at 16h 07m 03s.xml">
+      <configuration name="ComplexArrayTest.getRowTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ComplexArrayTest_getRowTest - 2017.07.12 at 16h 07m 56s.xml">
+      <configuration name="ComplexArrayTest.getRowTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FourierTransformTest_fourierTransformTest - 2017.07.12 at 15h 52m 03s.xml">
       <configuration name="FourierTransformTest.fourierTransformTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ImageServiceTest_complexImageToBufferedImageTest - 2017.06.15 at 14h 27m 47s.xml">
-      <configuration name="ImageServiceTest.complexImageToBufferedImageTest" configurationId="JUnit" />
+    <history-entry file="FourierTransformTest_fourierTransformTest - 2017.07.12 at 15h 54m 46s.xml">
+      <configuration name="FourierTransformTest.fourierTransformTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ImageServiceTest_complexImageToBufferedImageTest - 2017.06.15 at 14h 42m 44s.xml">
-      <configuration name="ImageServiceTest.complexImageToBufferedImageTest" configurationId="JUnit" />
+    <history-entry file="FourierTransformTest_performance - 2017.07.12 at 16h 17m 18s.xml">
+      <configuration name="FourierTransformTest.performance" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ImageServiceTest_complexImageToBufferedImageTest - 2017.06.15 at 14h 49m 59s.xml">
-      <configuration name="ImageServiceTest.complexImageToBufferedImageTest" configurationId="JUnit" />
+    <history-entry file="FourierTransformTest_performance - 2017.07.12 at 16h 17m 54s.xml">
+      <configuration name="FourierTransformTest.performance" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ImageServiceTest_complexImageToBufferedImageTest - 2017.06.15 at 14h 57m 03s.xml">
-      <configuration name="ImageServiceTest.complexImageToBufferedImageTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ImageServiceTest_complexImageToBufferedImageTest - 2017.06.15 at 14h 58m 25s.xml">
-      <configuration name="ImageServiceTest.complexImageToBufferedImageTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ImageServiceTest_complexImageToBufferedImageTest - 2017.06.15 at 15h 14m 41s.xml">
-      <configuration name="ImageServiceTest.complexImageToBufferedImageTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ImageServiceTest_complexImageToBufferedImageTest - 2017.06.15 at 16h 17m 23s.xml">
-      <configuration name="ImageServiceTest.complexImageToBufferedImageTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ImageServiceTest_complexImageToBufferedImageTest - 2017.06.15 at 16h 25m 56s.xml">
-      <configuration name="ImageServiceTest.complexImageToBufferedImageTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ImageServiceTest_complexImageToBufferedImageTest - 2017.06.15 at 16h 27m 38s.xml">
-      <configuration name="ImageServiceTest.complexImageToBufferedImageTest" configurationId="JUnit" />
+    <history-entry file="FourierTransformTest_performance - 2017.07.12 at 16h 19m 23s.xml">
+      <configuration name="FourierTransformTest.performance" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -1507,20 +1726,21 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31527627" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31527627" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20575693" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12526652" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22707888" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12526652" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1532,7 +1752,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1549,19 +1768,19 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997833" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47887325" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31619257" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31527627" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18133047" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2228145" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12633263" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12526652" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
@@ -1579,7 +1798,7 @@
           <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="40" />
+      <option name="time" value="49" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1588,57 +1807,15 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/rodrigofrazao/domain/complexNumbers/ComplexNumbersTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/rodrigofrazao/domain/imageTest/ReadImageTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rodrigofrazao/domain/image/ReadImage.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rodrigofrazao/domain/supportConstraints/Mask.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/rodrigofrazao/domain/f.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rodrigofrazao/domain/image/ComplexImage.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rodrigofrazao/domain/fourierTransform/InverseTwoD_FFT.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rodrigofrazao/domain/complexNumbers/PolarComplex.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rodrigofrazao/domain/fourierTransform/TwoD_FFT.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rodrigofrazao/domain/complexNumbers/Complex.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rodrigofrazao/domain/algorithms/PhasingAlgorithm.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/rodrigofrazao/domain/complexNumbers/ComplexNumbersTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/rodrigofrazao/domain/imageTest/ReadImageTest.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rodrigofrazao/domain/image/ImageService.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rodrigofrazao/domain/algorithms/ErrorReduction.java" />
     <entry file="file://$PROJECT_DIR$/build.gradle" />
     <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ComplexImageFactory.java" />
     <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/AmplitudeImage.java" />
-    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/complexNumbers/ComplexNumbersTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/supportConstraints/Mask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="37" column="30" lean-forward="false" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/algorithms/PhasingAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/algorithms/ErrorReduction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="108" lean-forward="false" selection-start-line="10" selection-start-column="108" selection-end-line="10" selection-end-column="108" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/algorithms/AlgorithmService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1660,22 +1837,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="28" column="65" lean-forward="false" selection-start-line="28" selection-start-column="65" selection-end-line="28" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/InverseTwoD_FFT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ComplexImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1693,38 +1854,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/AmplitudeOnlyImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/jre/lib/rt.jar!/java/util/function/Function.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/supportConstraintsTest/MaskTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="36" column="5" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="36" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/MultipartImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/imageTest/ComplexImageTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="53" column="77" lean-forward="false" selection-start-line="53" selection-start-column="77" selection-end-line="53" selection-end-column="77" />
         </state>
       </provider>
     </entry>
@@ -1749,35 +1882,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/imageTest/ReadImageTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="29" column="100" lean-forward="false" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/imageTest/ImageServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/fourierTransform/FourierTransformTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="25" column="58" lean-forward="true" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/TwoD_FFT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1787,71 +1891,284 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/config/WebConfig.java" />
     <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/config/CorsFilter.java" />
-    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ReadImage.java">
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1639#1640#0" expanded="false" />
-            <element signature="e#1708#1709#0" expanded="false" />
-            <element signature="e#1745#1746#0" expanded="false" />
-            <element signature="e#1778#1779#0" expanded="false" />
-            <element signature="e#1812#1813#0" expanded="false" />
-            <element signature="e#1852#1853#0" expanded="false" />
-            <element signature="e#2151#2152#0" expanded="false" />
-            <element signature="e#2196#2197#0" expanded="false" />
-            <element signature="e#2527#2528#0" expanded="false" />
-            <element signature="e#2586#2587#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="510">
+          <caret line="30" column="64" lean-forward="false" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ImageService.java">
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/algorithms/ErrorReduction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="663">
+          <caret line="41" column="26" lean-forward="false" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/algorithms/AlgorithmService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/AmplitudeOnlyImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/imageTest/ImageServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
           <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/CdiApplication.java">
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/TwoD_FFT.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-          <folding>
-            <element signature="e#590#591#0" expanded="true" />
-            <element signature="e#655#656#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="30" column="64" lean-forward="false" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
+        <state relative-caret-position="119">
+          <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/controllers/StringResponse.java">
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/Fftshift.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="30" lean-forward="false" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/controllers/ImageStringResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/supportConstraintsTest/MaskTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="31" column="37" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+          <folding>
+            <element signature="e#599#600#0" expanded="false" />
+            <element signature="e#672#673#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/supportConstraints/Mask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+          <folding>
+            <element signature="e#1115#1116#0" expanded="false" />
+            <element signature="e#1167#1168#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/Threaded_Inverse_TwoD_FFT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/InverseTwoD_FFT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/imageTest/ReadImageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="18" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/imageTest/ComplexImageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" column="25" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="15" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ReadImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="46" column="38" lean-forward="false" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
+          <folding>
+            <element signature="e#2025#2026#0" expanded="false" />
+            <element signature="e#2094#2095#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/imageTest/InlineImageTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+          <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
           <folding>
-            <element signature="e#144#145#0" expanded="true" />
-            <element signature="e#177#178#0" expanded="true" />
-            <element signature="e#243#244#0" expanded="true" />
-            <element signature="e#291#292#0" expanded="true" />
-            <element signature="e#331#332#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/Threaded_TwoD_FFT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="28" column="45" lean-forward="false" selection-start-line="27" selection-start-column="8" selection-end-line="28" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/CdiApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="16" column="45" lean-forward="false" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ImageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="77" column="27" lean-forward="false" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/fourierTransform/InverseFourierTransformTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="35" column="77" lean-forward="true" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/ThreadService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="40" column="58" lean-forward="false" selection-start-line="40" selection-start-column="58" selection-end-line="40" selection-end-column="58" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/controllers/ImageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="835">
+          <caret line="59" column="46" lean-forward="false" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/Threaded_Inline_TwoD_FFT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="35" column="38" lean-forward="false" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/complexNumbers/ComplexNumbersTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="28" column="5" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="28" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/complexNumbers/ComplexArrayTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/complexNumbers/PolarComplex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/fourierTransform/FourierTransformTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="34" column="56" lean-forward="false" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/complexNumbers/Complex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/CT_1D_FFT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/complexNumbers/ComplexArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ComplexImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="59" column="52" lean-forward="true" selection-start-line="58" selection-start-column="15" selection-end-line="59" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/InlineComplexImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="92" column="51" lean-forward="false" selection-start-line="92" selection-start-column="51" selection-end-line="92" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/CT_TwoD_FFT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="28" column="47" lean-forward="false" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

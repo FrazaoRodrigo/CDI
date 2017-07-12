@@ -4,6 +4,7 @@ import javax.imageio.ImageIO;
 import java.awt.color.ColorSpace;
 import java.awt.image.BufferedImage;
 import java.awt.image.ColorConvertOp;
+import java.awt.image.DataBufferByte;
 import java.awt.image.Raster;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -26,8 +27,6 @@ public class ReadImage {
     this.image=bufferedImage;
     }
 
-    public BufferedImage getBuffuredImage(){return image;}
-
     public BufferedImage buffuredImageToGrayImage(){
        BufferedImage gray = new BufferedImage(image.getWidth(),image.getHeight(), BufferedImage.TYPE_BYTE_GRAY);
         ColorConvertOp op = new ColorConvertOp(
@@ -35,6 +34,19 @@ public class ReadImage {
                 gray.getColorModel().getColorSpace(),null);
         image= op.filter(image,gray);
         return image;
+    }
+
+    public InlineComplexImage buffuredImageToInlineArray(){
+        int w = image.getWidth();
+        int h = image.getHeight();
+        double[] array= new double[h*w];
+
+        final byte[] pixels = ((DataBufferByte) image.getRaster().getDataBuffer()).getData();
+
+        for (int i=0; i<h*w;i++){
+            array[i] = pixels[i]*(-255);
+        }
+        return new InlineComplexImage(h,w,array);
     }
 
     public double[][] bufferedImageToArray() {

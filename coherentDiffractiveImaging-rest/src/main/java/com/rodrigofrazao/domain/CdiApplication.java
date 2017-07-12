@@ -14,6 +14,6 @@ public class CdiApplication extends SpringBootServletInitializer {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(CdiApplication.class, args);
+        SpringApplication.run(CdiApplication .class, args);
     }
 }

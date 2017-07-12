@@ -1,0 +1,17 @@
+<md-card>
+<md-card-title>
+  Fourier Transform
+</md-card-title> 
+
+<md-card-actions>
+
+<button type="button" (click)="fft()">FFT</button>
+<md-progress-spinner *ngIf="loading" mode="indeterminate"></md-progress-spinner>  
+<img  src="{{imagefft}}" />
+
+<button type="button" (click)="shiftOrigin()">Shift Origin</button>
+<img  src="{{imageshifted}}" >
+<button type="button" (click)="invfft()">Inv FFT</button>
+<img  src="{{imageinvfft}}" >
+</md-card-actions>  
+</md-card>

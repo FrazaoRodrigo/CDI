@@ -1,8 +1,5 @@
 package com.rodrigofrazao.domain.image;
 
-import com.rodrigofrazao.domain.supportConstraints.Mask;
-
-import java.util.Arrays;
 
 public class AmplitudeOnlyImage extends ComplexImage {
 

@@ -14,7 +14,7 @@ public class MaskTest {
 
     @Before
     public void setUp(){
-        mask = new Mask(5,8);
+        mask = new Mask(10,10);
     }
 
     @Test
@@ -25,6 +25,11 @@ public class MaskTest {
     @Test
     public void onesMaskTest_shouldReturnAllTrue(){
         Assert.assertArrayEquals(mask.ones().getMask(),trueArray);
+    }
+
+    @Test
+    public void drawcircletest() throws Exception {
+      printArray(mask.lowpassfilter(2).getMask());
     }
 
     public void printArray(boolean[][] array) {
