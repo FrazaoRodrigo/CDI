@@ -76,24 +76,5 @@ public class InlineComplexImage {
         return imagArray;
     }
 
-    public Complex[] getRow(int index) {
 
-        Complex[] outArray = new Complex[width];
-
-        for (int k = index*width; k < index*width+width-1; k++) {
-            PolarComplex polarComplex = new PolarComplex(amplitude[k],phase[k]);
-            outArray[k] = new Complex(polarComplex.re(),polarComplex.im());
-        }
-        return outArray;
-    }
-
-    public  Complex[] getCollums(int index){
-        Complex[] outArray = new Complex[width];
-
-        for (int k = index*height; k < index*height+height-1; k++) {
-            PolarComplex polarComplex = new PolarComplex(amplitude[k],phase[k]);
-            outArray[k] = new Complex(polarComplex.re(),polarComplex.im());
-        }
-        return outArray;
-    }
 }

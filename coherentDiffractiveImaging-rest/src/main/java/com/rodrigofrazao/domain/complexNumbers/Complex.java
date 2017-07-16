@@ -87,4 +87,28 @@ public class Complex {
         Complex sum = new Complex(real, imag);
         return sum;
     }
+
+    public static double[] reArray(Complex[] array) {
+      double[] result = new double[array.length];
+        for (int i = 0 ; i < array.length;++i){
+            result[i] = array[i].re();
+        }
+        return result;
+    }
+
+    public static double[] imArray(Complex[] array) {
+        double[] result = new double[array.length];
+        for (int i = 0 ; i <array.length;i++){
+            result[i] = array[i].im();
+        }
+        return result;
+    }
+
+    public  static Complex[] toComplexArray(double[] real,double[] imag){
+        Complex[] result = new Complex[real.length];
+        for (int i = 0 ; i <real.length;i++){
+            result[i] = new Complex(real[i],imag[i]);
+        }
+        return result;
+    }
 }

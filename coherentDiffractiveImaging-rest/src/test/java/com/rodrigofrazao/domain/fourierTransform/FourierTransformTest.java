@@ -16,7 +16,7 @@ import static com.rodrigofrazao.domain.fourierTransform.TwoD_FFT.twoDfft;
 public class FourierTransformTest {
 
     ComplexImage complexImage;
-    double[][] testArray = new double[32][16];
+    double[][] testArray = new double[8][4];
 
     @Before
     public void setUp() {
@@ -24,8 +24,8 @@ public class FourierTransformTest {
         ReadImage image = new ReadImage(f);
         complexImage = image.bufferedImageToComplexImage();
 
-        for(int j = 0; j < 32; ++j) {
-            for(int k = 0; k < 16; ++k) {
+        for(int j = 0; j < 8; ++j) {
+            for(int k = 0; k < 4; ++k) {
                 testArray[j][k] =  Math.random() * 256;
             }
         }
@@ -52,7 +52,7 @@ public class FourierTransformTest {
     public void performance() throws InterruptedException, ExecutionException {
 
         ComplexImage test = new AmplitudeOnlyImage(testArray);
-        ComplexImage fourierInLine =  twoD_fft_ct(test);
+        ComplexImage fourierInLine = test.fft_CP_thread();
     }
 
 

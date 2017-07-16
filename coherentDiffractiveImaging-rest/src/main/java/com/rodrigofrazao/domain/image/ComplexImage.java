@@ -1,5 +1,6 @@
 package com.rodrigofrazao.domain.image;
 
+import com.rodrigofrazao.domain.complexNumbers.Complex;
 import com.rodrigofrazao.domain.complexNumbers.PolarComplex;
 import com.rodrigofrazao.domain.fourierTransform.Threaded_TwoD_FFT;
 import com.rodrigofrazao.domain.supportConstraints.Mask;
@@ -8,6 +9,7 @@ import java.util.Arrays;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 
+import static com.rodrigofrazao.domain.fourierTransform.CT_TwoD_FFT.twoD_fft_ct;
 import static com.rodrigofrazao.domain.fourierTransform.Fftshift.shiftOrigin;
 import static com.rodrigofrazao.domain.fourierTransform.InverseTwoD_FFT.inverseXform2D;
 import static com.rodrigofrazao.domain.fourierTransform.ThreadService.twoDFFT_inline_thread;
@@ -51,6 +53,17 @@ public class ComplexImage {
         }
         return new InlineComplexImage(height, width, outAmplitude, outPhase);
     }
+
+    public Complex[][] toComplexArray(){
+        Complex[][] result = new Complex[height][width];
+        for (int j = 0; j < height; j++) {
+            for (int k = 0; k < width; k++) {
+               result[j][k] = new Complex(re()[j][k],im()[j][k]);
+            }
+        }
+        return result;
+    }
+
 
     public double[][] re() {
         double[][] realArray = new double[height][width];
@@ -98,6 +111,10 @@ public class ComplexImage {
 
     public ComplexImage fft_inline_thread() throws InterruptedException, ExecutionException {
         return twoDFFT_inline_thread(this, 10);
+    }
+
+    public ComplexImage fft_CP_thread() throws InterruptedException, ExecutionException {
+        return twoD_fft_ct(this, 8);
     }
 
 
