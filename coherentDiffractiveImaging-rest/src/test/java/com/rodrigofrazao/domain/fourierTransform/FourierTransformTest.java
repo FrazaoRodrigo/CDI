@@ -16,7 +16,7 @@ import static com.rodrigofrazao.domain.fourierTransform.TwoD_FFT.twoDfft;
 public class FourierTransformTest {
 
     ComplexImage complexImage;
-    double[][] testArray = new double[8][4];
+    double[][] testArray = new double[64][32];
 
     @Before
     public void setUp() {
@@ -50,7 +50,7 @@ public class FourierTransformTest {
 
     @Test
     public void performance() throws InterruptedException, ExecutionException {
-
+        //Thread.sleep(50000);
         ComplexImage test = new AmplitudeOnlyImage(testArray);
         ComplexImage fourierInLine = test.fft_CP_thread();
     }

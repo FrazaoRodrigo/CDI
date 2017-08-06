@@ -28,6 +28,14 @@ public class InlineComplexImage {
         this.phase = phase;
     }
 
+    public Complex[] toComplex(){
+        Complex[] outArray = new Complex[width*height];
+        for (int i=0; i<width * height;i++){
+            outArray[i]= new Complex(re()[i],im()[i]);
+        }
+        return outArray;
+    }
+
     public ComplexImage toComplexImage() {
         double[][] outAmplitude = new double[height][width];
         double[][] outphase = new double[height][width];

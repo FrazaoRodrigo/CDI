@@ -28,4 +28,24 @@ public class ComplexArray {
         }
         return result;
     }
+
+    public static Complex[] getCollums(int index,Complex[][] matrix){
+        int height = matrix.length;
+        Complex[] result = new Complex[height];
+        for(int i = 0; i < height; i++)
+        {
+            result[i] = matrix[i][index];
+        }
+        return result;
+    }
+
+    public static Complex[] getRows(int index,Complex[][] matrix){
+        int width = matrix[0].length;
+        Complex[] result = new Complex[width];
+        for(int i = 0; i < width; i++)
+        {
+            result[i] = matrix[index][i];
+        }
+        return result;
+    }
 }

@@ -114,7 +114,7 @@ public class ComplexImage {
     }
 
     public ComplexImage fft_CP_thread() throws InterruptedException, ExecutionException {
-        return twoD_fft_ct(this, 8);
+        return twoD_fft_ct(this, 10);
     }
 
 
