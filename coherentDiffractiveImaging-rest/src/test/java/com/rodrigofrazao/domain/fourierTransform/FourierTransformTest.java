@@ -24,8 +24,8 @@ public class FourierTransformTest {
         ReadImage image = new ReadImage(f);
         complexImage = image.bufferedImageToComplexImage();
 
-        for(int j = 0; j < 8; ++j) {
-            for(int k = 0; k < 4; ++k) {
+        for(int j = 0; j < 64; ++j) {
+            for(int k = 0; k < 32; ++k) {
                 testArray[j][k] =  Math.random() * 256;
             }
         }
@@ -50,9 +50,8 @@ public class FourierTransformTest {
 
     @Test
     public void performance() throws InterruptedException, ExecutionException {
-        //Thread.sleep(50000);
         ComplexImage test = new AmplitudeOnlyImage(testArray);
-        ComplexImage fourierInLine = test.fft_CP_thread();
+        ComplexImage fourierInLine = test.fft_CP_thread_2V();
     }
 
 

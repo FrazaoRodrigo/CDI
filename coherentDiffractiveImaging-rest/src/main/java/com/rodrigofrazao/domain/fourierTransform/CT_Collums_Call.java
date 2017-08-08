@@ -1,8 +1,8 @@
 package com.rodrigofrazao.domain.fourierTransform;
 
 import com.rodrigofrazao.domain.complexNumbers.Complex;
+import com.rodrigofrazao.domain.complexNumbers.SparseMatrix;
 
-import java.util.Arrays;
 import java.util.concurrent.Callable;
 
 import static com.rodrigofrazao.domain.fourierTransform.CT_1D_FFT.fft_ct;
@@ -10,22 +10,24 @@ import static com.rodrigofrazao.domain.fourierTransform.CT_1D_FFT.fft_ct;
 public class CT_Collums_Call implements Callable {
 
     int nThreads,nbrOfCollums,startIndx;
-    Complex[] inputInlineComplex;
-    int height = inputInlineComplex.length/nbrOfCollums;
+    SparseMatrix sparseMatrix;
 
-    public CT_Collums_Call(int nThreads, int nbrOfCollums, int startIndx, Complex[] inputInlineComplex) {
+
+    public CT_Collums_Call( int startIndx,int nThreads,  SparseMatrix sparseMatrix) {
         this.nThreads = nThreads;
-        this.nbrOfCollums = nbrOfCollums;
+        this.nbrOfCollums = sparseMatrix.getWidth();
         this.startIndx = startIndx;
-        this.inputInlineComplex = inputInlineComplex;
+        this.sparseMatrix = sparseMatrix;
+
     }
 
     @Override
-    public Complex[] call() throws Exception {
-        Complex[] collumsFFT = new Complex[height];
+    public SparseMatrix call() throws Exception {
+        SparseMatrix outCollum = new SparseMatrix(sparseMatrix.getHeight(),sparseMatrix.getWidth());
         for(int j = startIndx; j< nbrOfCollums; j+=nThreads) {
-            collumsFFT =fft_ct(Arrays.copyOfRange(inputInlineComplex, j, j + height - 1));
+            outCollum.setCollum(j,fft_ct(sparseMatrix.getCollum(j)));
         }
-        return collumsFFT;
+        return outCollum;
     }
 }
+

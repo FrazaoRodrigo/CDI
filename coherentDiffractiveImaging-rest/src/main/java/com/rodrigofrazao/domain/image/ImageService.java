@@ -9,10 +9,8 @@ import java.io.*;
 import java.util.Base64;
 import java.util.concurrent.ExecutionException;
 
+import static com.rodrigofrazao.domain.fourierTransform.CT_TwoD_FFT.fft_twoD_ct;
 import static com.rodrigofrazao.domain.fourierTransform.ThreadService.inverseTwoDFFT_thread;
-import static com.rodrigofrazao.domain.fourierTransform.ThreadService.twoDFFT_inline_thread;
-import static com.rodrigofrazao.domain.fourierTransform.ThreadService.twoDFFT_thread;
-import static com.rodrigofrazao.domain.fourierTransform.TwoD_FFT.twoDfft;
 import static javax.xml.bind.DatatypeConverter.*;
 
 public class ImageService {
@@ -53,7 +51,7 @@ public class ImageService {
     }
 
     public ComplexImage fft(ComplexImage image) throws ExecutionException, InterruptedException {
-        return  twoDFFT_inline_thread(image,10);
+        return  fft_twoD_ct(image,10);
     }
 
     public ComplexImage logAndScaleFFT(ComplexImage fourierTransformedImage)  {

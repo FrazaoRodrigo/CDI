@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 
+import static com.rodrigofrazao.domain.fourierTransform.CT_TwoD_FFT.fft_twoD_ct;
 import static com.rodrigofrazao.domain.fourierTransform.CT_TwoD_FFT.twoD_fft_ct;
 import static com.rodrigofrazao.domain.fourierTransform.Fftshift.shiftOrigin;
 import static com.rodrigofrazao.domain.fourierTransform.InverseTwoD_FFT.inverseXform2D;
@@ -64,6 +65,11 @@ public class ComplexImage {
         return result;
     }
 
+    public Complex toComplex(int height, int width){
+        PolarComplex polarComplex = new PolarComplex(amplitude[height][width],phase[height][width]);
+        return new Complex(polarComplex.re(),polarComplex.im());
+    }
+
 
     public double[][] re() {
         double[][] realArray = new double[height][width];
@@ -115,6 +121,10 @@ public class ComplexImage {
 
     public ComplexImage fft_CP_thread() throws InterruptedException, ExecutionException {
         return twoD_fft_ct(this, 10);
+    }
+
+    public ComplexImage fft_CP_thread_2V() throws ExecutionException, InterruptedException {
+        return  fft_twoD_ct(this,10);
     }
 
 

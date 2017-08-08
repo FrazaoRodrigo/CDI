@@ -2629,8 +2629,8 @@ declare module "tty" {
         isTTY: boolean;
     }
     export interface WriteStream extends net.Socket {
-        columns: number;
-        rows: number;
+        width: number;
+        height: number;
         isTTY: boolean;
     }
 }
