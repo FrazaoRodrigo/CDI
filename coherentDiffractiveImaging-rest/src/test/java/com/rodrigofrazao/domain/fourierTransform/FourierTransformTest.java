@@ -10,7 +10,7 @@ import org.junit.Test;
 import java.io.File;
 import java.util.concurrent.ExecutionException;
 
-import static com.rodrigofrazao.domain.fourierTransform.CT_TwoD_FFT.twoD_fft_ct;
+
 import static com.rodrigofrazao.domain.fourierTransform.TwoD_FFT.twoDfft;
 
 public class FourierTransformTest {

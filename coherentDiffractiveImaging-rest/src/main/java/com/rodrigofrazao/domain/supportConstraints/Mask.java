@@ -44,7 +44,7 @@ public class Mask {
     }
 
     public Mask lowpassfilter(int r){
-      return  drawcircle(r,height/2,width/2);
+      return  drawcircle(r,round(height/2),round(width/2));
     }
 
     private Mask drawcircle(int r, int start_X, int start_Y) {

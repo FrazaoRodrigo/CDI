@@ -1,5 +1,6 @@
 package com.rodrigofrazao.domain.imageTest;
 
+import com.rodrigofrazao.domain.complexNumbers.Complex;
 import com.rodrigofrazao.domain.image.ComplexImage;
 import com.rodrigofrazao.domain.image.AmplitudeOnlyImage;
 import org.assertj.core.api.Assertions;
@@ -15,14 +16,19 @@ public class ComplexImageTest {
     @Before
     public void setUp() {
         Random r = new Random();
-        tesstArray = new double[10][11];
+        tesstArray = new double[15][30];
         testAmplitude = new double[10][11];
         testPhase = new double[10][11];
+        for (int j = 0; j < testAmplitude.length; j++) {
+            for (int k = 0; k < testAmplitude[0].length; k++) {
+                testAmplitude[j][k] = (double) 256 * r.nextDouble();
+                testPhase[j][k] =  -Math.PI + (Math.PI - (-Math.PI)) * r.nextDouble();
+            }
+        }
+
         for (int j = 0; j < tesstArray.length; j++) {
             for (int k = 0; k < tesstArray[0].length; k++) {
                 tesstArray[j][k] = 1.0;
-                testAmplitude[j][k] = (double) 256 * r.nextDouble();
-                testPhase[j][k] =  -Math.PI + (Math.PI - (-Math.PI)) * r.nextDouble();
             }
         }
     }
@@ -64,5 +70,14 @@ public class ComplexImageTest {
     public void imaginaryPartTest(){
         ComplexImage complexImage = new ComplexImage(testAmplitude,testPhase);
         Assertions.assertThat(complexImage.im()).isNotNull();
+    }
+
+    @Test
+    public void paddingImageTest(){
+        ComplexImage image = new AmplitudeOnlyImage(tesstArray);
+        ComplexImage newImage=image.checkImageDimensions();
+        Assertions.assertThat(newImage.getWidth()).isEqualTo(32);
+        Assertions.assertThat(newImage.getHeight()).isEqualTo(16);
+        System.out.println(newImage.amplitude[0][0]);
     }
 }

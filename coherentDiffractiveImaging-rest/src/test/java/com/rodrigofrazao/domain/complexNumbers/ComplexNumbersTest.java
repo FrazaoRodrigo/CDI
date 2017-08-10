@@ -42,5 +42,9 @@ public class ComplexNumbersTest {
       double[] real =  reArray(testArray);
     }
 
+    @Test
+    public void smth(){
+        System.out.println(5/2);
+    }
 
 }

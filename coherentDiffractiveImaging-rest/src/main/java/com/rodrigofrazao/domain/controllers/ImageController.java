@@ -32,6 +32,7 @@ public class ImageController {
     @RequestMapping(value = "/fft", method = RequestMethod.GET,produces = "application/json")
     public ImageStringResponse fft() throws IOException {
         try {
+            image=image.checkImageDimensions();
             fourierImage = imageService.fft(image);
         } catch (ExecutionException e) {
             e.printStackTrace();
@@ -63,8 +64,8 @@ public class ImageController {
 
     @RequestMapping(value = "/low_pass", method = RequestMethod.GET,produces = "application/json")
     public ImageStringResponse lowpassfilter() throws IOException, ExecutionException, InterruptedException {
-        //fourierImage.shiftWithPhase();
-        ComplexImage result = imageService.lowpassfilter(fourierImage,10);
+
+        ComplexImage result = imageService.lowpassfilter(fourierImage.shiftWithPhase(),10);
         result = imageService.invfft(result);
         return new ImageStringResponse(imageService.complexImageToFrontEnd(result));
     }

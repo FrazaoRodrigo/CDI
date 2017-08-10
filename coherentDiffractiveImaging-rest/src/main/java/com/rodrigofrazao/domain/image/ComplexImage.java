@@ -2,15 +2,13 @@ package com.rodrigofrazao.domain.image;
 
 import com.rodrigofrazao.domain.complexNumbers.Complex;
 import com.rodrigofrazao.domain.complexNumbers.PolarComplex;
-import com.rodrigofrazao.domain.fourierTransform.Threaded_TwoD_FFT;
+
 import com.rodrigofrazao.domain.supportConstraints.Mask;
 
 import java.util.Arrays;
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 
 import static com.rodrigofrazao.domain.fourierTransform.CT_TwoD_FFT.fft_twoD_ct;
-import static com.rodrigofrazao.domain.fourierTransform.CT_TwoD_FFT.twoD_fft_ct;
 import static com.rodrigofrazao.domain.fourierTransform.Fftshift.shiftOrigin;
 import static com.rodrigofrazao.domain.fourierTransform.InverseTwoD_FFT.inverseXform2D;
 import static com.rodrigofrazao.domain.fourierTransform.ThreadService.twoDFFT_inline_thread;
@@ -43,6 +41,57 @@ public class ComplexImage {
         return this;
     }
 
+    private ComplexImage paddWithZeros(int numOfPadsHeight, int numOfPadsWidth) {
+        double[][] outAmplitude = new double[height + numOfPadsHeight][width + numOfPadsWidth];
+        double[][] outPhase = new double[height + numOfPadsHeight][width + numOfPadsWidth];
+
+        if (numOfPadsHeight % 2 == 0 && numOfPadsWidth % 2 == 0) {
+            numOfPadsHeight=numOfPadsHeight/2;
+            numOfPadsWidth=numOfPadsWidth/2;
+        } else if (numOfPadsHeight % 2 != 0 && numOfPadsWidth % 2 == 0) {
+            numOfPadsWidth=numOfPadsWidth/2;
+            numOfPadsHeight=numOfPadsHeight/2+1;
+        } else if (numOfPadsHeight % 2 == 0 && numOfPadsWidth % 2 != 0) {
+            numOfPadsHeight=numOfPadsHeight/2;
+            numOfPadsWidth=numOfPadsWidth/2+1;
+        } else {
+            numOfPadsHeight=numOfPadsHeight/2+1;
+            numOfPadsWidth=numOfPadsWidth/2+1;
+        }
+
+        for (int j = 0; j < height; j++) {
+            for (int k = 0; k < width; k++) {
+                outAmplitude[j + numOfPadsHeight][k + numOfPadsWidth] = amplitude[j][k];
+                outPhase[j + numOfPadsHeight][k + numOfPadsWidth] = phase[j][k];
+            }
+        }
+        return new ComplexImage(outAmplitude, outPhase);
+    }
+
+    public ComplexImage checkImageDimensions() {
+        int newHeight = height;
+        int newWidth = width;
+        if ((height & (height - 1)) != 0) {
+            newHeight = nextPowerOfTwo(height);
+        }
+        if ((width & (width - 1)) != 0) {
+            newWidth = nextPowerOfTwo(width);
+        }
+        if ((height & (height - 1)) == 0 && (width & (width - 1)) == 0) {
+            return this;
+        } else {
+            return paddWithZeros((newHeight - height), (newWidth - width));
+        }
+    }
+
+    private int nextPowerOfTwo(int number) {
+        int highestOneBit = Integer.highestOneBit(number);
+        if (highestOneBit < number) {
+            highestOneBit = highestOneBit * 2;
+        }
+        return highestOneBit;
+    }
+
     public InlineComplexImage toInlineImage() {
         double[] outAmplitude = new double[height * width];
         double[] outPhase = new double[height * width];
@@ -55,19 +104,19 @@ public class ComplexImage {
         return new InlineComplexImage(height, width, outAmplitude, outPhase);
     }
 
-    public Complex[][] toComplexArray(){
+    public Complex[][] toComplexArray() {
         Complex[][] result = new Complex[height][width];
         for (int j = 0; j < height; j++) {
             for (int k = 0; k < width; k++) {
-               result[j][k] = new Complex(re()[j][k],im()[j][k]);
+                result[j][k] = new Complex(re()[j][k], im()[j][k]);
             }
         }
         return result;
     }
 
-    public Complex toComplex(int height, int width){
-        PolarComplex polarComplex = new PolarComplex(amplitude[height][width],phase[height][width]);
-        return new Complex(polarComplex.re(),polarComplex.im());
+    public Complex toComplex(int height, int width) {
+        PolarComplex polarComplex = new PolarComplex(amplitude[height][width], phase[height][width]);
+        return new Complex(polarComplex.re(), polarComplex.im());
     }
 
 
@@ -119,12 +168,9 @@ public class ComplexImage {
         return twoDFFT_inline_thread(this, 10);
     }
 
-    public ComplexImage fft_CP_thread() throws InterruptedException, ExecutionException {
-        return twoD_fft_ct(this, 10);
-    }
 
     public ComplexImage fft_CP_thread_2V() throws ExecutionException, InterruptedException {
-        return  fft_twoD_ct(this,10);
+        return fft_twoD_ct(this, 10);
     }
 
 
@@ -189,6 +235,17 @@ public class ComplexImage {
         return new Mask(binaryGuess);
     }
 
+    public ComplexImage sumComplex(ComplexImage image) {
+
+        for (int j = 0; j < height; ++j) {
+            for (int k = 0; k < width; ++k) {
+                amplitude[j][k] = amplitude[j][k] + image.getAmplitude()[j][k];
+                phase[j][k] = phase[j][k] + image.getPhase()[j][k];
+            }
+        }
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -211,14 +268,5 @@ public class ComplexImage {
         return result;
     }
 
-    public ComplexImage sumComplex(ComplexImage image) {
 
-        for (int j = 0; j < height; ++j) {
-            for (int k = 0; k < width; ++k) {
-                amplitude[j][k] = amplitude[j][k] + image.getAmplitude()[j][k];
-                phase[j][k] = phase[j][k] + image.getPhase()[j][k];
-            }
-        }
-        return this;
-    }
 }

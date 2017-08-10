@@ -1,10 +1,10 @@
 package com.rodrigofrazao.domain.fourierTransform;
 
-import com.rodrigofrazao.domain.complexNumbers.Complex;
+
 import com.rodrigofrazao.domain.complexNumbers.SparseMatrix;
 import com.rodrigofrazao.domain.image.ComplexImage;
 
-import java.util.HashMap;
+
 import java.util.concurrent.ExecutionException;
 
 import static com.rodrigofrazao.domain.fourierTransform.ThreadService.*;
@@ -14,14 +14,14 @@ public class CT_TwoD_FFT {
     public static ComplexImage fft_twoD_ct(ComplexImage image, int nThreads) throws ExecutionException, InterruptedException {
 
         SparseMatrix imageSparse = new SparseMatrix(image);
-        SparseMatrix horizontalFFT = rowsCT(nThreads,imageSparse);
-        SparseMatrix verticalFFT = collumsCT(nThreads,horizontalFFT);
+        SparseMatrix horizontalFFT = rowsCT(nThreads,imageSparse,"direct");
+        SparseMatrix verticalFFT = collumsCT(nThreads,horizontalFFT,"direct");
 
         return buildFromSparseMatrix(verticalFFT);
     }
 
 
-    private static ComplexImage buildFromSparseMatrix(SparseMatrix matrix){
+    public static ComplexImage buildFromSparseMatrix(SparseMatrix matrix){
         int width = matrix.getWidth();
         int height = matrix.getHeight();
         double[][] outAmplitude = new double[height][width];
@@ -36,5 +36,5 @@ public class CT_TwoD_FFT {
 
         return new ComplexImage(outAmplitude,outPhase);
     }
-    
+
 }

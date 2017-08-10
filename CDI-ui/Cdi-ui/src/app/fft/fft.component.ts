@@ -21,13 +21,11 @@ export class FftComponent implements OnInit {
   }
 
    fft() {
-     console.log(this.loading)
     this.onLoad()
-    console.log(this.loading)
     let headers = new Headers({ 'Content-Type': 'application/json' }); 
     let options = new RequestOptions({ headers : headers }); 
     this.http.get('http://localhost:8080/fft').map(res => res.json(),options).subscribe(res => {this.imagefft ='data:image/jpg;base64,' + res["response"];  this.onLoad()});
-    console.log(this.loading)
+    
   }
 
   invfft(){

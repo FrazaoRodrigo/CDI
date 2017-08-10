@@ -10,6 +10,7 @@ import java.util.Base64;
 import java.util.concurrent.ExecutionException;
 
 import static com.rodrigofrazao.domain.fourierTransform.CT_TwoD_FFT.fft_twoD_ct;
+import static com.rodrigofrazao.domain.fourierTransform.CT_TwoD_Inverse_FFT.ifft_ct;
 import static com.rodrigofrazao.domain.fourierTransform.ThreadService.inverseTwoDFFT_thread;
 import static javax.xml.bind.DatatypeConverter.*;
 
@@ -22,7 +23,7 @@ public class ImageService {
     }
 
     public ComplexImage frontEndImageToComplexImage(BufferedImage bufferedImage) throws IOException {
-        if (bufferedImage == null){
+        if (bufferedImage == null) {
             throw new InvalidObjectException("Base64 image is wrong, results in a NULL Buffured image");
         }
         ReadImage image = new ReadImage(bufferedImage);
@@ -44,37 +45,40 @@ public class ImageService {
         WritableRaster raster = b.getRaster();
         for (int x = 0; x < height; x++) {
             for (int y = 0; y < width; y++) {
-                raster.setSample(x,y,0,pixels.getAmplitude()[x][y]);
+                raster.setSample(x, y, 0, pixels.getAmplitude()[x][y]);
             }
         }
         return b;
     }
 
     public ComplexImage fft(ComplexImage image) throws ExecutionException, InterruptedException {
-        return  fft_twoD_ct(image,10);
+        return fft_twoD_ct(image, 10);
     }
 
-    public ComplexImage logAndScaleFFT(ComplexImage fourierTransformedImage)  {
+    public ComplexImage logAndScaleFFT(ComplexImage fourierTransformedImage) {
         int height = fourierTransformedImage.getAmplitude().length;
         int width = fourierTransformedImage.getAmplitude()[0].length;
         double max = 0;
         for (int x = 0; x < height; x++) {
             for (int y = 0; y < width; y++) {
-                fourierTransformedImage.getAmplitude()[x][y] = Math.log(fourierTransformedImage.getAmplitude()[x][y]+1);
-                max =  (fourierTransformedImage.getAmplitude()[x][y] > max) ?  fourierTransformedImage.getAmplitude()[x][y] : max;
+                fourierTransformedImage.getAmplitude()[x][y] = Math.log(fourierTransformedImage.getAmplitude()[x][y] + 1);
+                max = (fourierTransformedImage.getAmplitude()[x][y] > max) ? fourierTransformedImage.getAmplitude()[x][y] : max;
             }
         }
         return fourierTransformedImage;
     }
 
     public ComplexImage invfft(ComplexImage fourierImage) throws ExecutionException, InterruptedException {
-        return inverseTwoDFFT_thread(fourierImage,10);
+        return ifft_ct(fourierImage, 10);
     }
 
 
-    public ComplexImage lowpassfilter(ComplexImage fourierImage,int radius) {
-        Mask mask = new Mask(fourierImage.getWidth(),fourierImage.getHeight());
-         mask.lowpassfilter(radius);
+    public ComplexImage lowpassfilter(ComplexImage fourierImage, int radius) {
+        Mask mask = new Mask(fourierImage.getWidth(), fourierImage.getHeight());
+        mask.lowpassfilter(radius);
         return fourierImage.withSupportConstraint(mask);
     }
+
+
+
 }

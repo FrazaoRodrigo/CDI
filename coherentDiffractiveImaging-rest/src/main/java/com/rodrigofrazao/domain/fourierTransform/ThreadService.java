@@ -71,14 +71,14 @@ public class ThreadService {
     }
 
 
-    public static SparseMatrix rowsCT(int nThreads, SparseMatrix input) throws ExecutionException, InterruptedException {
+    public static SparseMatrix rowsCT(int nThreads, SparseMatrix input, String option) throws ExecutionException, InterruptedException {
 
         List<Future<SparseMatrix>> resultArray = new ArrayList<>();
         ExecutorService executor = Executors.newFixedThreadPool(nThreads);
         SparseMatrix outArray = new SparseMatrix(input.getHeight(),input.getWidth());
 
         for (int i = 0; i < nThreads; i++) {
-            Callable fftThread = new CT_Rows_Call(i,nThreads,input);
+            Callable fftThread = new CT_Rows_Call(i,nThreads,input,option);
             Future<SparseMatrix> result = executor.submit(fftThread);
             resultArray.add(result);
         }
@@ -90,14 +90,14 @@ public class ThreadService {
         return outArray;
     }
 
-    public static SparseMatrix collumsCT(int nThreads, SparseMatrix input) throws ExecutionException, InterruptedException {
+    public static SparseMatrix collumsCT(int nThreads, SparseMatrix input, String option) throws ExecutionException, InterruptedException {
 
         List<Future<SparseMatrix>> resultArray = new ArrayList<>();
         ExecutorService executor = Executors.newFixedThreadPool(nThreads);
         SparseMatrix outArray = new SparseMatrix(input.getHeight(),input.getWidth());
 
         for (int i = 0; i < nThreads; i++) {
-            Callable fftThread = new CT_Collums_Call(i, nThreads, input);
+            Callable fftThread = new CT_Collums_Call(i, nThreads, input, option);
             Future<SparseMatrix> result = executor.submit(fftThread);
             resultArray.add(result);
         }
