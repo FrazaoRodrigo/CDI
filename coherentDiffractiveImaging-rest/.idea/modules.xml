@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-951705058/CDI.iml" filepath="$PROJECT_DIR$/.idea/modules/-951705058/CDI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/389621610/Cdi-ui.iml" filepath="$PROJECT_DIR$/.idea/modules/389621610/Cdi-ui.iml" group="Cdi-ui" />
+      <module fileurl="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest.iml" filepath="$PROJECT_DIR$/coherentDiffractiveImaging-rest.iml" group="coherentDiffractiveImaging-rest" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/coherentDiffractiveImaging-rest_main.iml" filepath="$PROJECT_DIR$/.idea/modules/coherentDiffractiveImaging-rest_main.iml" group="coherentDiffractiveImaging-rest" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/coherentDiffractiveImaging-rest_test.iml" filepath="$PROJECT_DIR$/.idea/modules/coherentDiffractiveImaging-rest_test.iml" group="coherentDiffractiveImaging-rest" />
+    </modules>
+  </component>
+</project>
