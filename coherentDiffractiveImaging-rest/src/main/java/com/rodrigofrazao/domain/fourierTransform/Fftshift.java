@@ -5,7 +5,7 @@ import com.rodrigofrazao.domain.image.ComplexImage;
 
 public class Fftshift {
 
-   public static ComplexImage shiftOrigin(double[][] data){
+   public static double[][] shiftOrigin(double[][] data){
         int numberOfRows = data.length;
         int numberOfCols = data[0].length;
         int newRows;
@@ -93,6 +93,6 @@ public class Fftshift {
                 output[row][col] = temp[row][col];
             }
         }
-        return new AmplitudeOnlyImage(output);
+        return output;
     }
 }

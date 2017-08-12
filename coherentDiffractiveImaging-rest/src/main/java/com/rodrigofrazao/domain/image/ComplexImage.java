@@ -151,12 +151,12 @@ public class ComplexImage {
     }
 
     public ComplexImage shift() {
-        return shiftOrigin(amplitude);
+        return new AmplitudeOnlyImage(shiftOrigin(amplitude));
     }
 
     public ComplexImage shiftWithPhase() {
-        amplitude = shiftOrigin(amplitude).getAmplitude();
-        phase = shiftOrigin(phase).getPhase();
+        amplitude = shiftOrigin(amplitude);
+        phase = shiftOrigin(phase);
         return this;
     }
 
