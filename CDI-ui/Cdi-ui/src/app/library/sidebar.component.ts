@@ -4,13 +4,13 @@ import { Component } from '@angular/core';
     selector: 'sidebar',
     template: `
     <md-sidenav-container fullscreen>
-       <md-toolbar color="primary">   
+       <md-toolbar class="background-primary-color">   
             <button md-icon-button (click)="sidenav.toggle()">
                 <md-icon class="md-24" >menu</md-icon>
             </button>
         </md-toolbar>
-    <md-sidenav #sidenav mode="side" >
-    <md-toolbar color="accent">
+    <md-sidenav #sidenav mode="side">
+    <md-toolbar (class)="background-accent-color">
     
    Menu?
 
@@ -40,12 +40,13 @@ import { Component } from '@angular/core';
   <router-outlet></router-outlet>
 </md-sidenav-container>
 
-    `
+    `,
+  styles:['.mat-sidenav.mat-sidenav{ background-color: #f5ffa3!important;}']
 })
 
 export class SidebarComponent{
 
- uploadState: boolean; 
+ uploadState: boolean;
  displayState: boolean;
  fftState:boolean;
 
@@ -61,5 +62,5 @@ displayChange(){
 fftChange(){
    this.fftState = !this.fftState;
 }
-   
+
 }

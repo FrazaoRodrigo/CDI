@@ -3,21 +3,21 @@
 @import '~https://fonts.googleapis.com/icon?family=Roboto';
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
-body{ 
+body{
     font-family: Roboto, sans-serif;
 }
 
 .primary-color {
-    color: #3F51B5!important;
+    color: #5394b5!important;
   }
 .accent-color {
-    color: #FF4081!important;
+    color: #f5ffa3!important;
   }
 .background-primary-color {
-    background-color: #3F51B5!important;
+    background-color: #5394b5!important;
   }
 .background-accent-color {
-    background-color: #FF4081!important;
+    background-color: #f5ffa3!important;
   }
 .white-text {
     color: #FFF!important;
