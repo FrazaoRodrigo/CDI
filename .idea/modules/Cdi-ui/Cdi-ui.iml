@@ -3,6 +3,8 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../CDI-ui">
+      <excludeFolder url="file://$MODULE_DIR$/../../../CDI-ui/Cdi-ui/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../CDI-ui/Cdi-ui/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/../../../Cdi-ui/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../Cdi-ui/build" />
     </content>

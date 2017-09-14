@@ -9,11 +9,9 @@ import { Component } from '@angular/core';
                 <md-icon class="md-24" >menu</md-icon>
             </button>
         </md-toolbar>
-    <md-sidenav #sidenav mode="side">
-    <md-toolbar (class)="background-accent-color">
-    
-   Menu?
-
+    <md-sidenav #sidenav mode="side" class="background-accent-color">
+    <md-toolbar >
+      Menu
     <md-toolbar-row>
     <md-button-toggle (click)="uploadChange()">
        <span>Upload</span>
