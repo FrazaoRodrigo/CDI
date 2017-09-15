@@ -1,7 +1,5 @@
 package com.rodrigofrazao.domain.fourierTransform;
 
-import com.rodrigofrazao.domain.image.AmplitudeOnlyImage;
-import com.rodrigofrazao.domain.image.ComplexImage;
 
 public class Fftshift {
 

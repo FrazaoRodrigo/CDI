@@ -10,6 +10,7 @@ import java.util.concurrent.ExecutionException;
 
 import static com.rodrigofrazao.domain.fourierTransform.CT_TwoD_FFT.fft_twoD_ct;
 import static com.rodrigofrazao.domain.fourierTransform.Fftshift.shiftOrigin;
+import static com.rodrigofrazao.domain.fourierTransform.Ifftshift.iShiftOrigin;
 import static com.rodrigofrazao.domain.fourierTransform.InverseTwoD_FFT.inverseXform2D;
 import static com.rodrigofrazao.domain.fourierTransform.ThreadService.twoDFFT_inline_thread;
 import static com.rodrigofrazao.domain.fourierTransform.ThreadService.twoDFFT_thread;
@@ -155,9 +156,15 @@ public class ComplexImage {
     }
 
     public ComplexImage shiftWithPhase() {
-        amplitude = shiftOrigin(amplitude);
-        phase = shiftOrigin(phase);
+        this.amplitude = shiftOrigin(amplitude);
+        this.phase = shiftOrigin(phase);
         return this;
+    }
+
+    public ComplexImage iShiftWithPhase(){
+        this.amplitude= iShiftOrigin(amplitude);
+        this.phase =iShiftOrigin(phase);
+        return  this;
     }
 
     public ComplexImage fft_thread() throws InterruptedException, ExecutionException {
@@ -244,6 +251,19 @@ public class ComplexImage {
             }
         }
         return this;
+    }
+
+    @Override
+    public String toString(){
+        StringBuffer amplitudeString = new StringBuffer();
+
+        for (int i = 0; i < amplitude.length; i++) {
+            for (int j = 0; j < amplitude[0].length; j++) {
+                amplitudeString.append(amplitude[i][j] + " ");
+            }
+            amplitudeString.append("/n");
+        }
+        return amplitudeString.toString();
     }
 
     @Override
