@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class FourierShiftTest {
 
-    ComplexImage image;
+    ComplexImage image = new ComplexImage();
     double[][] testArray = new double[8][4];
 
     @Before

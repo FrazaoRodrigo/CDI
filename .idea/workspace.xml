@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7b31a83-46af-4396-a6c9-d7355f3b4c41" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/fourierTransform/FourierShiftTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/out/production/classes/com/rodrigofrazao/domain/fourierTransform/Fftshift.class" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/out/production/classes/com/rodrigofrazao/domain/fourierTransform/Fftshift.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/out/production/classes/com/rodrigofrazao/domain/image/ComplexImage.class" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/out/production/classes/com/rodrigofrazao/domain/image/ComplexImage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/Fftshift.java" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/Fftshift.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ComplexImage.java" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ComplexImage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/fourierTransform/FourierShiftTest.java" afterPath="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/fourierTransform/FourierShiftTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/rest/.gradle/" />
@@ -119,7 +114,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ComplexImage.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ComplexImage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ComplexImage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="530">
@@ -131,11 +126,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FourierShiftTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FourierShiftTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/fourierTransform/FourierShiftTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="42" lean-forward="true" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+            <state relative-caret-position="153">
+              <caret line="9" column="42" lean-forward="false" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -887,8 +882,8 @@
         <option value="$PROJECT_DIR$/CDI-ui/Cdi-ui/src/app/library/sidebar.component.ts" />
         <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/Ifftshift.java" />
         <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/fourierTransform/Fftshift.java" />
-        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/fourierTransform/FourierShiftTest.java" />
         <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ComplexImage.java" />
+        <option value="$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/fourierTransform/FourierShiftTest.java" />
       </list>
     </option>
   </component>
@@ -1439,14 +1434,11 @@
       <workItem from="1505132626297" duration="590000" />
       <workItem from="1505134499735" duration="606000" />
       <workItem from="1505392496554" duration="233000" />
-      <workItem from="1505461843572" duration="2841000" />
+      <workItem from="1505461843572" duration="3159000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ComplexImageTest_paddingImageTest - 2017.08.10 at 11h 57m 58s.xml">
-      <configuration name="ComplexImageTest.paddingImageTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ComplexImageTest_paddingImageTest - 2017.08.10 at 11h 58m 45s.xml">
       <configuration name="ComplexImageTest.paddingImageTest" configurationId="JUnit" />
     </history-entry>
@@ -1471,12 +1463,15 @@
     <history-entry file="FourierShiftTest_shouldPreformAFullShift - 2017.09.15 at 11h 38m 43s.xml">
       <configuration name="FourierShiftTest.shouldPreformAFullShift" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="FourierShiftTest_shouldPreformAFullShift - 2017.09.15 at 11h 50m 04s.xml">
+      <configuration name="FourierShiftTest.shouldPreformAFullShift" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="FourierTransformTest_performance - 2017.09.07 at 15h 20m 43s.xml">
       <configuration name="FourierTransformTest.performance" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13147000" />
+    <option name="totallyTimeSpent" value="13465000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1508,7 +1503,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31495228" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31495228" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32873806" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19739583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1682,8 +1677,16 @@
           <properties />
           <option name="timeStamp" value="155" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/fourierTransform/FourierShiftTest.java</url>
+          <line>24</line>
+          <properties class="com.rodrigofrazao.domain.fourierTransform.FourierShiftTest" method="shouldPreformAFullShift">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="157" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="157" />
+      <option name="time" value="158" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2058,6 +2061,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ComplexImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="265" column="41" lean-forward="false" selection-start-line="265" selection-start-column="41" selection-end-line="265" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/fourierTransform/FourierTransformTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="445">
@@ -2068,18 +2081,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/test/java/com/rodrigofrazao/domain/fourierTransform/FourierShiftTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="42" lean-forward="true" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coherentDiffractiveImaging-rest/src/main/java/com/rodrigofrazao/domain/image/ComplexImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="265" column="41" lean-forward="false" selection-start-line="265" selection-start-column="41" selection-end-line="265" selection-end-column="41" />
+        <state relative-caret-position="153">
+          <caret line="9" column="42" lean-forward="false" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
