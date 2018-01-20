@@ -5,9 +5,11 @@ import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.concurrent.ExecutionException;
+
 public class FourierShiftTest {
 
-    ComplexImage image = new ComplexImage();
+    ComplexImage image;
     double[][] testArray = new double[8][4];
 
     @Before
@@ -17,13 +19,35 @@ public class FourierShiftTest {
                 testArray[j][k] =  Math.random() * 256;
             }
         }
-        image.setAmplitude(testArray);
-        image.phase=testArray;
+        image= new ComplexImage(testArray,testArray);
     }
 
     @Test
     public void shouldPreformAFullShift(){
         Assertions.assertThat(image.shiftWithPhase().iShiftWithPhase()).isEqualTo(image);
+    }
+
+
+    @Test
+    public void fullFourierCicle() throws ExecutionException, InterruptedException {
+
+        Assertions.assertThat(image.fft()
+                .invfft()
+                .compareAmplitude())
+                .isEqualTo(image
+                        .compareAmplitude());
+    }
+
+
+    @Test
+    public void shouldPreformAFullShiftwithfft() throws ExecutionException, InterruptedException {
+       Assertions.assertThat(image.fft()
+               .shiftWithPhase()
+               .iShiftWithPhase()
+               .invfft()
+               .compareAmplitude())
+               .isEqualTo(image
+                       .compareAmplitude());
     }
 
 }

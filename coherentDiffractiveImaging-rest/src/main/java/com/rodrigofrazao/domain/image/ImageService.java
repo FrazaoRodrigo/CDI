@@ -1,10 +1,12 @@
 package com.rodrigofrazao.domain.image;
 
 import com.rodrigofrazao.domain.supportConstraints.Mask;
+import org.springframework.stereotype.Component;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.awt.image.WritableRaster;
+import java.beans.Transient;
 import java.io.*;
 import java.util.Base64;
 import java.util.concurrent.ExecutionException;
@@ -14,6 +16,7 @@ import static com.rodrigofrazao.domain.fourierTransform.CT_TwoD_Inverse_FFT.ifft
 import static com.rodrigofrazao.domain.fourierTransform.ThreadService.inverseTwoDFFT_thread;
 import static javax.xml.bind.DatatypeConverter.*;
 
+@Component
 public class ImageService {
 
     public BufferedImage decodeImageFromFrontEnd(String imageString) throws IOException {
@@ -55,6 +58,17 @@ public class ImageService {
         return fft_twoD_ct(image, 10);
     }
 
+    public ComplexImage invfft(ComplexImage fourierImage) throws ExecutionException, InterruptedException {
+        return ifft_ct(fourierImage, 10);
+    }
+
+
+    public ComplexImage lowpassfilter(ComplexImage fourierImage, int radius) {
+        Mask mask = new Mask(fourierImage.getWidth(), fourierImage.getHeight());
+        mask.lowpassfilter(radius);
+        return fourierImage.withSupportConstraint(mask);
+    }
+
     public ComplexImage logAndScaleFFT(ComplexImage fourierTransformedImage) {
         int height = fourierTransformedImage.getAmplitude().length;
         int width = fourierTransformedImage.getAmplitude()[0].length;
@@ -67,18 +81,5 @@ public class ImageService {
         }
         return fourierTransformedImage;
     }
-
-    public ComplexImage invfft(ComplexImage fourierImage) throws ExecutionException, InterruptedException {
-        return ifft_ct(fourierImage, 10);
-    }
-
-
-    public ComplexImage lowpassfilter(ComplexImage fourierImage, int radius) {
-        Mask mask = new Mask(fourierImage.getWidth(), fourierImage.getHeight());
-        mask.lowpassfilter(radius);
-        return fourierImage.withSupportConstraint(mask);
-    }
-
-
 
 }

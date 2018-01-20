@@ -2,6 +2,9 @@ package com.rodrigofrazao.domain.controllers;
 
 import com.rodrigofrazao.domain.image.ComplexImage;
 import com.rodrigofrazao.domain.image.ImageService;
+import com.rodrigofrazao.domain.supportConstraints.filters.FilterService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import java.awt.image.BufferedImage;
@@ -13,7 +16,11 @@ import static com.rodrigofrazao.domain.fourierTransform.Fftshift.shiftOrigin;
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class ImageController {
-    private ImageService imageService = new ImageService();
+
+    @Autowired
+    private ImageService imageService;
+    @Autowired
+    private FilterService filterService;
     private ComplexImage image,fourierImage;
 
 
@@ -42,32 +49,18 @@ public class ImageController {
         return new ImageStringResponse(imageService.complexImageToFrontEnd(fourierImage));
     }
 
-    @RequestMapping(value = "/fftshift", method = RequestMethod.GET,produces = "application/json")
-    public ImageStringResponse shift() throws IOException {
 
-        ComplexImage result = fourierImage.shiftWithPhase();
-        return new ImageStringResponse(imageService.complexImageToFrontEnd(result));
-    }
 
-    @RequestMapping(value = "/fft_Log", method = RequestMethod.GET,produces = "application/json")
-    public ImageStringResponse fft_log_scaled() throws IOException {
-
-        ComplexImage result = imageService.logAndScaleFFT(fourierImage);
-        return new ImageStringResponse(imageService.complexImageToFrontEnd(result));
-    }
 
     @RequestMapping(value = "/inv_fft", method = RequestMethod.GET,produces = "application/json")
     public ImageStringResponse inv_fft() throws IOException, ExecutionException, InterruptedException {
-        ComplexImage result = imageService.invfft(fourierImage);
-        return new ImageStringResponse(imageService.complexImageToFrontEnd(result));
+        image = imageService.invfft(fourierImage);
+        return new ImageStringResponse(imageService.complexImageToFrontEnd(image));
     }
 
     @RequestMapping(value = "/low_pass", method = RequestMethod.GET,produces = "application/json")
     public ImageStringResponse lowpassfilter() throws IOException, ExecutionException, InterruptedException {
-
-        ComplexImage result = imageService.lowpassfilter(fourierImage.shiftWithPhase(),10);
-        result = imageService.invfft(result);
-        return new ImageStringResponse(imageService.complexImageToFrontEnd(result));
+        return new ImageStringResponse(imageService.complexImageToFrontEnd(filterService.lowpassFilter(image,20)));
     }
 
 }

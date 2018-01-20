@@ -16,7 +16,6 @@ import { SidebarComponent} from './library/sidebar.component';
 import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
 import 'rxjs/Rx';
 import { DisplayComponent } from './display/display.component';
-import { DialogComponent } from './dialog/dialog.component';
 import { FftComponent } from './fft/fft.component';
 
 @NgModule({
@@ -28,10 +27,8 @@ import { FftComponent } from './fft/fft.component';
     FileSelectDirective,
     FileDropDirective,
     SidebarComponent,
-    DialogComponent,
     FftComponent
   ],
-  entryComponents:[DialogComponent],
   imports: [
     routing,
     BrowserModule,

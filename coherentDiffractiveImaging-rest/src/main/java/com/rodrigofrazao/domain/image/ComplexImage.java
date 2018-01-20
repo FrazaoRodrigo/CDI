@@ -5,10 +5,12 @@ import com.rodrigofrazao.domain.complexNumbers.PolarComplex;
 
 import com.rodrigofrazao.domain.supportConstraints.Mask;
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.concurrent.ExecutionException;
 
 import static com.rodrigofrazao.domain.fourierTransform.CT_TwoD_FFT.fft_twoD_ct;
+import static com.rodrigofrazao.domain.fourierTransform.CT_TwoD_Inverse_FFT.ifft_ct;
 import static com.rodrigofrazao.domain.fourierTransform.Fftshift.shiftOrigin;
 import static com.rodrigofrazao.domain.fourierTransform.Ifftshift.iShiftOrigin;
 import static com.rodrigofrazao.domain.fourierTransform.InverseTwoD_FFT.inverseXform2D;
@@ -17,7 +19,7 @@ import static com.rodrigofrazao.domain.fourierTransform.ThreadService.twoDFFT_th
 import static com.rodrigofrazao.domain.fourierTransform.TwoD_FFT.twoDfft;
 
 public class ComplexImage {
-    public double[][] amplitude, phase;
+    private double[][] amplitude, phase;
     public int height, width;
 
     public ComplexImage() {
@@ -42,57 +44,6 @@ public class ComplexImage {
         return this;
     }
 
-    private ComplexImage paddWithZeros(int numOfPadsHeight, int numOfPadsWidth) {
-        double[][] outAmplitude = new double[height + numOfPadsHeight][width + numOfPadsWidth];
-        double[][] outPhase = new double[height + numOfPadsHeight][width + numOfPadsWidth];
-
-        if (numOfPadsHeight % 2 == 0 && numOfPadsWidth % 2 == 0) {
-            numOfPadsHeight=numOfPadsHeight/2;
-            numOfPadsWidth=numOfPadsWidth/2;
-        } else if (numOfPadsHeight % 2 != 0 && numOfPadsWidth % 2 == 0) {
-            numOfPadsWidth=numOfPadsWidth/2;
-            numOfPadsHeight=numOfPadsHeight/2+1;
-        } else if (numOfPadsHeight % 2 == 0 && numOfPadsWidth % 2 != 0) {
-            numOfPadsHeight=numOfPadsHeight/2;
-            numOfPadsWidth=numOfPadsWidth/2+1;
-        } else {
-            numOfPadsHeight=numOfPadsHeight/2+1;
-            numOfPadsWidth=numOfPadsWidth/2+1;
-        }
-
-        for (int j = 0; j < height; j++) {
-            for (int k = 0; k < width; k++) {
-                outAmplitude[j + numOfPadsHeight][k + numOfPadsWidth] = amplitude[j][k];
-                outPhase[j + numOfPadsHeight][k + numOfPadsWidth] = phase[j][k];
-            }
-        }
-        return new ComplexImage(outAmplitude, outPhase);
-    }
-
-    public ComplexImage checkImageDimensions() {
-        int newHeight = height;
-        int newWidth = width;
-        if ((height & (height - 1)) != 0) {
-            newHeight = nextPowerOfTwo(height);
-        }
-        if ((width & (width - 1)) != 0) {
-            newWidth = nextPowerOfTwo(width);
-        }
-        if ((height & (height - 1)) == 0 && (width & (width - 1)) == 0) {
-            return this;
-        } else {
-            return paddWithZeros((newHeight - height), (newWidth - width));
-        }
-    }
-
-    private int nextPowerOfTwo(int number) {
-        int highestOneBit = Integer.highestOneBit(number);
-        if (highestOneBit < number) {
-            highestOneBit = highestOneBit * 2;
-        }
-        return highestOneBit;
-    }
-
     public InlineComplexImage toInlineImage() {
         double[] outAmplitude = new double[height * width];
         double[] outPhase = new double[height * width];
@@ -105,14 +56,13 @@ public class ComplexImage {
         return new InlineComplexImage(height, width, outAmplitude, outPhase);
     }
 
-    public Complex[][] toComplexArray() {
-        Complex[][] result = new Complex[height][width];
+    public double[][] compareAmplitude() {
         for (int j = 0; j < height; j++) {
             for (int k = 0; k < width; k++) {
-                result[j][k] = new Complex(re()[j][k], im()[j][k]);
+                amplitude[j][k] = (double)Math.round(amplitude[j][k] * 1000d) / 1000d;
             }
         }
-        return result;
+        return this.getAmplitude();
     }
 
     public Complex toComplex(int height, int width) {
@@ -143,12 +93,12 @@ public class ComplexImage {
         return imaginaryArray;
     }
 
-    public ComplexImage invfft() {
-        return inverseXform2D(re(), im());
+    public ComplexImage invfft() throws ExecutionException, InterruptedException {
+        return ifft_ct(this,10);
     }
 
-    public ComplexImage fft() {
-        return twoDfft(amplitude);
+    public ComplexImage fft() throws ExecutionException, InterruptedException {
+        return fft_twoD_ct(this,10);
     }
 
     public ComplexImage shift() {
@@ -164,7 +114,7 @@ public class ComplexImage {
     public ComplexImage iShiftWithPhase(){
         this.amplitude= iShiftOrigin(amplitude);
         this.phase =iShiftOrigin(phase);
-        return  this;
+        return this;
     }
 
     public ComplexImage fft_thread() throws InterruptedException, ExecutionException {
@@ -227,7 +177,7 @@ public class ComplexImage {
             }
         }
 
-        return new AmplitudeOnlyImage(array);
+        return new ComplexImage(array,phase);
     }
 
     public Mask toBinaryMask(double threshold) {
@@ -251,6 +201,57 @@ public class ComplexImage {
             }
         }
         return this;
+    }
+
+    private ComplexImage paddWithZeros(int numOfPadsHeight, int numOfPadsWidth) {
+        double[][] outAmplitude = new double[height + numOfPadsHeight][width + numOfPadsWidth];
+        double[][] outPhase = new double[height + numOfPadsHeight][width + numOfPadsWidth];
+
+        if (numOfPadsHeight % 2 == 0 && numOfPadsWidth % 2 == 0) {
+            numOfPadsHeight=numOfPadsHeight/2;
+            numOfPadsWidth=numOfPadsWidth/2;
+        } else if (numOfPadsHeight % 2 != 0 && numOfPadsWidth % 2 == 0) {
+            numOfPadsWidth=numOfPadsWidth/2;
+            numOfPadsHeight=numOfPadsHeight/2+1;
+        } else if (numOfPadsHeight % 2 == 0 && numOfPadsWidth % 2 != 0) {
+            numOfPadsHeight=numOfPadsHeight/2;
+            numOfPadsWidth=numOfPadsWidth/2+1;
+        } else {
+            numOfPadsHeight=numOfPadsHeight/2+1;
+            numOfPadsWidth=numOfPadsWidth/2+1;
+        }
+
+        for (int j = 0; j < height; j++) {
+            for (int k = 0; k < width; k++) {
+                outAmplitude[j + numOfPadsHeight][k + numOfPadsWidth] = amplitude[j][k];
+                outPhase[j + numOfPadsHeight][k + numOfPadsWidth] = phase[j][k];
+            }
+        }
+        return new ComplexImage(outAmplitude, outPhase);
+    }
+
+    public ComplexImage checkImageDimensions() {
+        int newHeight = height;
+        int newWidth = width;
+        if ((height & (height - 1)) != 0) {
+            newHeight = nextPowerOfTwo(height);
+        }
+        if ((width & (width - 1)) != 0) {
+            newWidth = nextPowerOfTwo(width);
+        }
+        if ((height & (height - 1)) == 0 && (width & (width - 1)) == 0) {
+            return this;
+        } else {
+            return paddWithZeros((newHeight - height), (newWidth - width));
+        }
+    }
+
+    private int nextPowerOfTwo(int number) {
+        int highestOneBit = Integer.highestOneBit(number);
+        if (highestOneBit < number) {
+            highestOneBit = highestOneBit * 2;
+        }
+        return highestOneBit;
     }
 
     @Override

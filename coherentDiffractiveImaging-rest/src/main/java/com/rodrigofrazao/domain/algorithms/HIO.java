@@ -4,16 +4,18 @@ import com.rodrigofrazao.domain.image.AmplitudeOnlyImage;
 import com.rodrigofrazao.domain.image.ComplexImage;
 import com.rodrigofrazao.domain.supportConstraints.Mask;
 
+import java.util.concurrent.ExecutionException;
+
 public class HIO extends PhasingAlgorithm {
 
 
-    public HIO(double[][] diffractionPattern, ComplexImage previousGuess) {
+    public HIO(double[][] diffractionPattern, ComplexImage previousGuess) throws ExecutionException, InterruptedException {
         super(diffractionPattern);
         guess = previousGuess;
         fourierTransformedImage = previousGuess.fft();
     }
 
-    public Double[] iterationWithSupport(int iter, double beta, Mask mask) {
+    public Double[] iterationWithSupport(int iter, double beta, Mask mask) throws ExecutionException, InterruptedException {
 
         Double[] error = new Double[iter];
 
@@ -26,7 +28,7 @@ public class HIO extends PhasingAlgorithm {
         return error;
     }
 
-    public ComplexImage hio(ComplexImage image, Mask mask, double beta) {
+    public ComplexImage hio(ComplexImage image, Mask mask, double beta) throws ExecutionException, InterruptedException {
         image.setAmplitude(diffractionPattern)
                 .invfft();
         image = hybridAlgorithm(image, mask, beta);

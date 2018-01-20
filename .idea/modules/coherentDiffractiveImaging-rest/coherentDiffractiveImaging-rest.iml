@@ -4,6 +4,7 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../coherentDiffractiveImaging-rest">
       <excludeFolder url="file://$MODULE_DIR$/../../../coherentDiffractiveImaging-rest/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../coherentDiffractiveImaging-rest/.idea" />
       <excludeFolder url="file://$MODULE_DIR$/../../../coherentDiffractiveImaging-rest/build" />
       <excludeFolder url="file://$MODULE_DIR$/../../../coherentDiffractiveImaging-rest/out" />
     </content>

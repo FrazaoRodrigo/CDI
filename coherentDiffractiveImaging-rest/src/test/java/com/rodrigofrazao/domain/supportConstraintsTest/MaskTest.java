@@ -29,7 +29,7 @@ public class MaskTest {
 
     @Test
     public void drawcircletest() throws Exception {
-      printArray(mask.lowpassfilter(2).getMask());
+      printArray(mask.lowpassfilter(3).getMask());
     }
 
     public void printArray(boolean[][] array) {

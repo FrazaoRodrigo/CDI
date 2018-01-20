@@ -3,6 +3,7 @@ package com.rodrigofrazao.domain.imageTest;
 import com.rodrigofrazao.domain.complexNumbers.Complex;
 import com.rodrigofrazao.domain.image.ComplexImage;
 import com.rodrigofrazao.domain.image.AmplitudeOnlyImage;
+import com.rodrigofrazao.domain.supportConstraints.Mask;
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
@@ -70,6 +71,17 @@ public class ComplexImageTest {
     public void imaginaryPartTest(){
         ComplexImage complexImage = new ComplexImage(testAmplitude,testPhase);
         Assertions.assertThat(complexImage.im()).isNotNull();
+    }
+
+    @Test
+    public void trueSupportContraintTest(){
+        ComplexImage complexImage = new ComplexImage(testAmplitude,testPhase);
+        Mask mask = new Mask(complexImage.width,complexImage.height);
+        Assertions.assertThat(complexImage
+                .withSupportConstraint(mask.ones())
+                .compareAmplitude())
+                .isEqualTo(complexImage
+                        .compareAmplitude());
     }
 
     @Test

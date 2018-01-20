@@ -4,6 +4,8 @@ import com.rodrigofrazao.domain.image.ComplexImage;
 import com.rodrigofrazao.domain.image.AmplitudeOnlyImage;
 import com.rodrigofrazao.domain.supportConstraints.Mask;
 
+import java.util.concurrent.ExecutionException;
+
 public class ErrorReduction extends PhasingAlgorithm {
 
     public ErrorReduction(double[][] diffractionPattern) {
@@ -12,13 +14,12 @@ public class ErrorReduction extends PhasingAlgorithm {
         fourierTransformedImage=setUpWithRandomPhase();
     }
 
-    public ErrorReduction(double[][] diffractionPattern,ComplexImage previousGuess) {
-        super(diffractionPattern);
-        guess=previousGuess;
+    public ErrorReduction(double[][] diffractionPattern,ComplexImage previousGuess) throws ExecutionException, InterruptedException {
+        super(previousGuess,diffractionPattern);
         fourierTransformedImage= previousGuess.fft();
     }
 
-    public Double[] iterationWithSupport(int iter, Mask mask) {
+    public Double[] iterationWithSupport(int iter, Mask mask) throws ExecutionException, InterruptedException {
 
         Double[] error = new Double[iter];
 
@@ -33,7 +34,7 @@ public class ErrorReduction extends PhasingAlgorithm {
 
 
 
-    public ComplexImage errorReduction(ComplexImage image, Mask mask) {
+    private ComplexImage errorReduction(ComplexImage image, Mask mask) throws ExecutionException, InterruptedException {
         image.setAmplitude(diffractionPattern)
                 .invfft()
                 .shift()

@@ -14,12 +14,17 @@ public class PhasingAlgorithm {
     double[][] diffractionPattern;
 
     public PhasingAlgorithm(double[][] diffractionPattern) {
-        diffractionPattern=diffractionPattern;
+        this.diffractionPattern=diffractionPattern;
         guess= new AmplitudeOnlyImage(new double[diffractionPattern.length][diffractionPattern[0].length]);
         fourierTransformedImage=setUpWithRandomPhase();
     }
 
-   public ComplexImage setUpWithRandomPhase() {
+    public PhasingAlgorithm(ComplexImage guess, double[][] diffractionPattern) {
+        this.guess = guess;
+        this.diffractionPattern = diffractionPattern;
+    }
+
+    public ComplexImage setUpWithRandomPhase() {
         ComplexImage initialImage = new AmplitudeOnlyImage(diffractionPattern);
         initialImage.addRandomPhase();
         return initialImage;

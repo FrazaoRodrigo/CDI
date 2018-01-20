@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
-import {Observable} from 'rxjs/Observable';
-import { Headers, Http, RequestOptions } from '@angular/http'; 
+import { Headers, Http, RequestOptions } from '@angular/http';
 
 @Component({
   selector: 'app-display',
@@ -17,13 +16,13 @@ export class DisplayComponent {
 
   constructor(public http: Http,public _DomSanitizer: DomSanitizer) { }
 
-  
- 
+
+
   getImage() {
-    let headers = new Headers({ 'Content-Type': 'application/json' }); 
-    let options = new RequestOptions({ headers : headers }); 
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers : headers });
     return this.http.get('http://localhost:8080/display').map(res => res.json(),options);
- 
+
   }
 
   displayImage(){
